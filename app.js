@@ -161,7 +161,8 @@ function showProgramme(data) {
         <h3>Friday</h3>
         ${buildDayTable(data.timetable.friday)}
     </div>
-}`;
+`;
+showDay('monday');
 }
 //Function to build the timetable for each day
 function buildDayTable(slots) {
@@ -209,4 +210,5 @@ function showDay(day) {
             document.getElementById(`day-${days[i]}`).style.display = "none";
         }
     }
+    const tabButtons = document.querySelectorAll('.tab-buttons button');
 }
