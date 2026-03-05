@@ -25,6 +25,7 @@ nav {
         gap: 10px;
     }
     .tab-buttons {
+        display: flex;
         flex-direction: column;
         gap: 10px;
     }
@@ -180,4 +181,5 @@ th:nth-child(4), td:nth-child(4) {width: 15%;}
     background-color: #1a3c5e;
     color: white;
 }
+
 
