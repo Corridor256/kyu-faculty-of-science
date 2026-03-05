@@ -24,6 +24,10 @@ nav {
         flex-direction: column;
         gap: 10px;
     }
+    .tab-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
 }
 nav h1 {
     font-size: 1.2rem;
@@ -176,3 +180,4 @@ th:nth-child(4), td:nth-child(4) {width: 15%;}
     background-color: #1a3c5e;
     color: white;
 }
+
