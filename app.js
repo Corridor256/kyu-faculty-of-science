@@ -15,24 +15,24 @@ let chemMathContent = {
             {time: "08:00AM-10:00AM", course: "None", lecturer: "None", code: "None"},
             {time: "10:00AM-12:00PM", course: "None", lecturer: "None", code: "None"},
             {time: "12:00PM-02:00PM", course: "None", lecturer: "None", code: "None"},
-            {time: "02:00PM-04:00PM", course: "Analytical and Aplied Chemistry", lecturer: "Dr. XXXXX", code: "SED 2202"}
+            {time: "02:00PM-04:00PM", course: "Analytical and Aplied Organic Chemistry", lecturer: "Dr. Hilda D. Kyomuhimbo", code: "SED 2202"}
         ],
         tuesday: [
-            {time: "08:00AM-10:00AM", course: "Numerical Analysis", lecturer: "Dr. Savannah", code: "SMT 221"},
-            {time: "10:00AM-12:00PM", course: "Probability Theory", lecturer: "Dr. Hasifah", code: "SMT 222"},
+            {time: "08:00AM-10:00AM", course: "Numerical Analysis", lecturer: "Dr. Nuwagaba Savannah", code: "SMT 221"},
+            {time: "10:00AM-12:00PM", course: "Probability Theory", lecturer: "Dr.Nampala Hasifah", code: "SMT 222"},
             {time: "12:00PM-02:00PM", course: "General methods, education technology and school prsctice", lecturer: "Dr. Bashir", code: "EPS 2201"},
-            {time: "02:00PM-04:00PM", course: "Kinetics and Electrochemistry", lecturer: "Dr. YYYYY", code: "SED 2201"}
+            {time: "02:00PM-04:00PM", course: "Kinetics and Electrochemistry II", lecturer: "Dr. Jastus Masa", code: "SED 2201"}
         ],
         wednesday: [
-            {time: "08:00AM-10:00AM", course: "Probability Theory", lecturer: "Dr. Hasifah", code: "SMT 222"},
-            {time: "10:00AM-12:00PM", course: "Mathematics Education", lecturer: "Dr. Jalilah", code: "SMT 223"},
+            {time: "08:00AM-10:00AM", course: "Probability Theory", lecturer: "Dr.Nampala Hasifah", code: "SMT 222"},
+            {time: "10:00AM-12:00PM", course: "Mathematics Education", lecturer: "Dr. Namuwaya Jalilah", code: "SMT 223"},
             {time: "12:00PM-02:00PM", course: "General methods, education technology and school prsctice", lecturer: "Dr. Bashir", code: "EPS 2201"},
-            {time: "02:00PM-04:00PM", course: "Numerical Analysis", lecturer: "Dr. Savannah", code: "SMT 221"}
+            {time: "02:00PM-04:00PM", course: "Numerical Analysis", lecturer: "Dr. Nuwagaba Savannah", code: "SMT 221"}
         ],
         thursday: [
-            {time: "08:00AM-10:00AM", course: "Chemistry methods and Research methods", lecturer: "Dr. Nanyonga", code: "SED 2203"},
-            {time: "10:00AM-12:00PM", course: "Mathematics Education", lecturer: "Dr. Jalilah", code: "SMT 223"},
-            {time: "12:00PM-02:00PM", course: "Learning measurements and Evaluation", lecturer: "Ass. Professor Joseph", code: "EPS 2202"},
+            {time: "08:00AM-10:00AM", course: "Chemistry methods and Research methods", lecturer: "Dr. Sarah Nanyonga", code: "SED 2203"},
+            {time: "10:00AM-12:00PM", course: "Mathematics Education", lecturer: "Dr. Namuwaya Jalilah", code: "SMT 223"},
+            {time: "12:00PM-02:00PM", course: "Learning measurements and Evaluation", lecturer: "Assoc Prof Joseph Ssenyonga", code: "EPS 2202"},
             {time: "02:00PM-04:00PM", course: "None", lecturer: "None", code: "None"}
         ],
         friday: [
@@ -86,26 +86,26 @@ let phyMathContent = {
 let bioChemContent = {
     name: "ESB (Biology and Chemistry)",
     description: "Welcome to the ESB (Biology and Chemistry) section! Here, you will find a variety of resources and materials to help you excel in both biology and chemistry. Whether you're looking for study guides, practice problems, or interactive lessons, we've got you covered. Dive into our comprehensive content to enhance your understanding and boost your performance in these subjects!",
-    courseUnits: ["SBE 2201 - Human Ecology", "SBE 2202 - Genetics", "SBE 2203 - Evolution", "SBE 2204 - Biology Education", "SBE 2205 - Animal Physiology", "SED 2201 - Kinetics and Electrochemistry II", "SED 2202 - Analytical and Applied Chemistry", "SED 2203 - Chemistry Methods and Research Methods", "EPS 2201 - General Methods, Educational Technology and School Practice", "EPS 2202 - Learning Measurement and Evaluation"],
+    courseUnits: ["SBE 2201 - Genetics", "SBE 2202 - Evolution", "SBE 2203 - Animal Physiology", "SBE 2204 - Human Ecology", "SBE 2205 - Biology Education", "SED 2201 - Kinetics and Electrochemistry II", "SED 2202 - Analytical and Applied Chemistry", "SED 2203 - Chemistry Methods and Research Methods", "EPS 2201 - General Methods, Educational Technology and School Practice", "EPS 2202 - Learning Measurement and Evaluation"],
     resources: ["Biology textbooks", "Chemistry textbooks", "Online tutorials", "Practice problems", "Interactive simulations"],
     timetable: {
         monday: [
-            {time: "08:00AM-10:00AM", course:"Human Ecology", lecturer: "xxxxx", code: "SBE 2201"},
-            {time: "10:00AM-12:00PM", course:"Evolution", lecturer: "xxxxx", code: "SBE 2203"},
-            {time: "12:00PM-02:00PM", course:"Evolution", lecturer: "xxxxx", code: "SBE 2203"},
-            {time: "02:00PM-04:00PM", course:"Analytical and Applied Chemistry", lecturer: "xxxxx", code: "SED 2202"}
+            {time: "08:00AM-10:00AM", course:"Human Ecology", lecturer: "Dr. Mutekanga Norah Mbeiza", code: "SBE 2203"},
+            {time: "10:00AM-12:00PM", course:"Evolution", lecturer: "Dr. Muwonge Abubaker", code: "SBE 2202"},
+            {time: "12:00PM-02:00PM", course:"Evolution", lecturer: "Dr. Muwonge Abubaker", code: "SBE 2202"},
+            {time: "02:00PM-04:00PM", course:"Analytical and Applied Organic Chemistry", lecturer: "Dr. Hilda D. Kyomuhimbo", code: "SED 2202"}
         ],
         tuesday: [
-            {time: "08:00AM-10:00AM", course:"Genetics", lecturer: "xxxxx", code: "SBE 2202"},
-            {time: "10:00AM-12:00PM", course:"Genetics", lecturer: "xxxxx", code: "SBE 2202"},
+            {time: "08:00AM-10:00AM", course:"Genetics", lecturer: "Dr. Kigozi Stephen", code: "SBE 2201"},
+            {time: "10:00AM-12:00PM", course:"Genetics", lecturer: "Dr. Kigozi Stephen", code: "SBE 2201"},
             {time: "12:00PM-02:00PM", course:"General Methods, Educational Technology and School Practice", lecturer: "Dr. Kishabale Bashir", code: "EPS 2201"},
-            {time: "02:00PM-04:00PM", course:"Kinetics and Electrochemistry II", lecturer: "xxxxx", code: "SED 2201"}
+            {time: "02:00PM-04:00PM", course:"Kinetics and Electrochemistry II", lecturer: "Dr. Jastus Masa", code: "SED 2201"}
         ],
         wednesday: [
-            {time: "08:00AM-10:00AM", course:"Biology Education", lecturer: "xxxxx", code: "SBE 2204"},
-            {time: "10:00AM-12:00PM", course:"Biology Education", lecturer: "xxxxx", code: "SBE 2204"},
+            {time: "08:00AM-10:00AM", course:"Biology Education", lecturer: "Mr. Ndyagumizamu Moses", code: "SBE 2205"},
+            {time: "10:00AM-12:00PM", course:"Biology Education", lecturer: "Mr. Ndyagumizamu Moses", code: "SBE 2205"},
             {time: "12:00PM-02:00PM", course:"General Methods, Educational Technology and School Practice", lecturer: "Dr. Kishabale Bashir", code: "EPS 2201"},
-            {time: "02:00PM-04:00PM", course:"Animal Physiology", lecturer: "xxxxx", code: "SBE 2205"}
+            {time: "02:00PM-04:00PM", course:"Animal Physiology", lecturer: "Dr. Amatre Gerald", code: "SBE 2203"}
         ],
         thursday: [
             {time: "08:00AM-10:00AM", course:"Chemistry Methods I and Research Methods", lecturer: "Dr. Nanyonga", code: "SED 2203"},
