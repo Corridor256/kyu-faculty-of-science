@@ -1,0 +1,898 @@
+<!-- ==================== developer.html ==================== -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer - Kavuma Rodgers | Faculty of Science</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="logo">
+            <img src="kyambogo-logo.png" alt="Kyambogo University Logo" class="logo" width="100" height="100">
+        </div>
+        <h1>KYAMBOGO UNIVERSITY</h1>
+        <h1>Faculty of Science</h1>
+        <div class="nav-buttons">
+            <a href="index.html" class="nav-button">Home</a>
+            <a href="about.html" class="nav-button">About Us</a>
+            <a href="programs.html" class="nav-button">Programs</a>
+            <a href="research.html" class="nav-button">Research</a>
+            <a href="events.html" class="nav-button">Events</a>
+            <a href="developer.html" class="nav-button active-page"><i class="fas fa-code"></i> Developer</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="dev-hero">
+        <div class="dev-hero-bg">
+            <div class="floating-icon fi-1"><i class="fas fa-atom"></i></div>
+            <div class="floating-icon fi-2"><i class="fas fa-flask"></i></div>
+            <div class="floating-icon fi-3"><i class="fas fa-code"></i></div>
+            <div class="floating-icon fi-4"><i class="fas fa-square-root-alt"></i></div>
+            <div class="floating-icon fi-5"><i class="fas fa-laptop-code"></i></div>
+            <div class="floating-icon fi-6"><i class="fas fa-brain"></i></div>
+            <div class="floating-icon fi-7"><i class="fas fa-dna"></i></div>
+            <div class="floating-icon fi-8"><i class="fas fa-robot"></i></div>
+        </div>
+        <div class="dev-hero-overlay"></div>
+        <div class="dev-hero-content">
+            <div class="dev-hero-photo-wrapper">
+                <div class="dev-hero-photo">
+                    <!-- My Profile Photo -->
+                    <img src="developer-photo.png" alt="Kavuma Rodgers" id="dev-photo">
+                    <div class="photo-placeholder" id="photo-placeholder">
+                        <i class="fas fa-user"></i>
+                        <span>Photo</span>
+                    </div>
+                </div>
+                <div class="dev-status-badge">
+                    <span class="status-dot"></span> Available for Projects
+                </div>
+            </div>
+            <div class="dev-hero-text">
+                <div class="dev-greeting">Hello, I'm</div>
+                <h1 class="dev-name">Kavuma Rodgers</h1>
+                <div class="dev-title-typewriter">
+                    <span class="typewriter-text" id="typewriter"></span>
+                    <span class="typewriter-cursor">|</span>
+                </div>
+                <p class="dev-tagline">Aspiring Computational Chemist · Web Developer · BSc. Ed (Chem/Math) Student</p>
+                <div class="dev-quick-info">
+                    <span><i class="fas fa-id-card"></i> 24/U/ESP/131/GV</span>
+                    <span><i class="fas fa-graduation-cap"></i> Year 2</span>
+                    <span><i class="fas fa-university"></i> Kyambogo University</span>
+                </div>
+                <div class="dev-hero-actions">
+                    <a href="mailto:Kavumarodgersscientist@gmail.com" class="dev-btn primary-dev-btn">
+                        <i class="fas fa-envelope"></i> Get in Touch
+                    </a>
+                    <a href="#dev-journey" class="dev-btn secondary-dev-btn">
+                        <i class="fas fa-route"></i> My Journey
+                    </a>
+                    <a href="#dev-projects" class="dev-btn secondary-dev-btn">
+                        <i class="fas fa-code"></i> Projects
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- ABOUT ME -->
+    <section class="content-section" id="dev-about">
+        <div class="section-container">
+            <div class="section-title">
+                <i class="fas fa-user-circle"></i>
+                <h2>About Me</h2>
+            </div>
+            <div class="dev-about-grid">
+                <div class="dev-about-card main-bio">
+                    <div class="bio-quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p>I am <strong>Kavuma Rodgers</strong>, a passionate and driven second-year student 
+                    at <strong>Kyambogo University</strong>, pursuing a <strong>Bachelor of Science with 
+                    Education in Chemistry and Mathematics</strong>. Born on <strong>24th July 2004</strong> 
+                    in Kalagala village, Lwengo sub-county, Lwengo county, Lwengo district, Masaka, Uganda — 
+                    my journey from a small village in Lwengo to the halls of one of Uganda's leading 
+                    universities is a testament to resilience, curiosity, and an unrelenting desire to learn.</p>
+                    <p>Beyond the classroom, I have a deep-rooted love for <strong>computing, software, 
+                    and development</strong>. This passion pushed me into the world of <strong>web 
+                    development</strong>, where I am actively learning and building. This very website — 
+                    the Faculty of Science Student Portal — is my <strong>first published project</strong>, 
+                    and it represents the beginning of what I envision as a long and impactful career at 
+                    the intersection of science and technology.</p>
+                    <p>I dream of becoming a <strong>Computational Chemist</strong> who leverages 
+                    <strong>Artificial Intelligence</strong> and <strong>mathematical modeling</strong> 
+                    to revolutionize chemical research, making the microscopic world more accessible, 
+                    visual, and actionable for researchers worldwide.</p>
+                </div>
+                <div class="dev-about-sidebar">
+                    <div class="dev-info-card">
+                        <h4><i class="fas fa-id-badge"></i> Quick Profile</h4>
+                        <ul class="profile-list">
+                            <li>
+                                <span class="profile-label">Full Name</span>
+                                <span class="profile-value">Kavuma Rodgers</span>
+                            </li>
+                            <li>
+                                <span class="profile-label">Date of Birth</span>
+                                <span class="profile-value">24th July 2004</span>
+                            </li>
+                            <li>
+                                <span class="profile-label">Birthplace</span>
+                                <span class="profile-value">Kalagala, Lwengo, Uganda</span>
+                            </li>
+                            <li>
+                                <span class="profile-label">Reg. Number</span>
+                                <span class="profile-value">24/U/ESP/131/GV</span>
+                            </li>
+                            <li>
+                                <span class="profile-label">Program</span>
+                                <span class="profile-value">BSc. Ed (Chem/Math)</span>
+                            </li>
+                            <li>
+                                <span class="profile-label">Year of Study</span>
+                                <span class="profile-value">Year 2</span>
+                            </li>
+                            <li>
+                                <span class="profile-label">University</span>
+                                <span class="profile-value">Kyambogo University</span>
+                            </li>
+                            <li>
+                                <span class="profile-label">Interests</span>
+                                <span class="profile-value">Computational Chemistry, AI, Web Dev</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="dev-info-card age-card">
+                        <div class="age-display">
+                            <span class="age-number" id="dev-age">20</span>
+                            <span class="age-label">Years Old</span>
+                        </div>
+                        <p class="born-text"><i class="fas fa-birthday-cake"></i> Born July 24, 2004</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MISSION & VISION -->
+    <section class="content-section alt-bg" id="dev-mv">
+        <div class="section-container">
+            <div class="section-title">
+                <i class="fas fa-compass"></i>
+                <h2>Mission & Vision</h2>
+            </div>
+            <div class="dev-mv-grid">
+                <div class="dev-mv-card mission-card">
+                    <div class="mv-decorative-line"></div>
+                    <div class="mv-icon-large">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>My Mission</h3>
+                    <blockquote>
+                        "To bridge the gap between molecular sciences and computational intelligence 
+                        by mastering the mathematical foundations of chemistry and the latest in AI 
+                        development. I aim to build high-performance simulations and web-based tools 
+                        that accelerate chemical discovery, making complex molecular data accessible, 
+                        visual, and actionable."
+                    </blockquote>
+                    <div class="mv-keywords">
+                        <span><i class="fas fa-flask"></i> Molecular Sciences</span>
+                        <span><i class="fas fa-brain"></i> AI Development</span>
+                        <span><i class="fas fa-chart-line"></i> Simulations</span>
+                        <span><i class="fas fa-globe"></i> Accessibility</span>
+                    </div>
+                </div>
+                <div class="dev-mv-card vision-card">
+                    <div class="mv-decorative-line"></div>
+                    <div class="mv-icon-large">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>My Vision</h3>
+                    <blockquote>
+                        "To become a leading Computational Chemist who redefines how we interact with 
+                        the microscopic world. I envision a future where AI-driven modeling replaces 
+                        trial-and-error in the lab, leading to the rapid development of sustainable 
+                        materials and life-saving medicines through 'Silicon-First' research."
+                    </blockquote>
+                    <div class="mv-keywords">
+                        <span><i class="fas fa-atom"></i> Computational Chemistry</span>
+                        <span><i class="fas fa-robot"></i> AI Modeling</span>
+                        <span><i class="fas fa-leaf"></i> Sustainability</span>
+                        <span><i class="fas fa-microscope"></i> Silicon-First</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EDUCATION JOURNEY -->
+    <section class="content-section" id="dev-journey">
+        <div class="section-container">
+            <div class="section-title">
+                <i class="fas fa-road"></i>
+                <h2>My Education Journey</h2>
+            </div>
+            <p class="section-subtitle">From a small village in Lwengo to the lecture halls of Kyambogo University — 
+            every step has shaped who I am today.</p>
+
+            <div class="edu-timeline">
+                <!-- Primary School -->
+                <div class="edu-timeline-item" data-aos="fade-right">
+                    <div class="edu-timeline-dot primary-dot">
+                        <i class="fas fa-child"></i>
+                    </div>
+                    <div class="edu-timeline-card">
+                        <div class="edu-period-badge primary-badge">Primary School</div>
+                        <div class="edu-schools">
+                            <div class="edu-school-item">
+                                <div class="school-marker"></div>
+                                <div class="school-info">
+                                    <h4>Nakalinzi Church of Uganda Primary School</h4>
+                                    <span class="school-years"><i class="fas fa-calendar"></i> P.1 – P.2</span>
+                                    <p>Where my educational journey began — the first steps of formal learning 
+                                    in my home village area.</p>
+                                </div>
+                            </div>
+                            <div class="edu-school-item">
+                                <div class="school-marker"></div>
+                                <div class="school-info">
+                                    <h4>Kibimba Joy Primary School</h4>
+                                    <span class="school-years"><i class="fas fa-calendar"></i> P.2 – P.5</span>
+                                    <p>Continued building foundational knowledge in reading, writing, mathematics, 
+                                    and the sciences.</p>
+                                </div>
+                            </div>
+                            <div class="edu-school-item">
+                                <div class="school-marker"></div>
+                                <div class="school-info">
+                                    <h4>Peace Primary School – Kyawagonya</h4>
+                                    <span class="school-years"><i class="fas fa-calendar"></i> P.5 – P.7</span>
+                                    <p>Completed primary education and prepared for the Primary Leaving Examinations.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="edu-milestone">
+                            <div class="milestone-icon"><i class="fas fa-award"></i></div>
+                            <div class="milestone-text">
+                                <strong>P.L.E — 2016</strong>
+                                <p>Successfully sat the Primary Leaving Examinations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- O-Level -->
+                <div class="edu-timeline-item" data-aos="fade-left">
+                    <div class="edu-timeline-dot olevel-dot">
+                        <i class="fas fa-book-reader"></i>
+                    </div>
+                    <div class="edu-timeline-card">
+                        <div class="edu-period-badge olevel-badge">Ordinary Level (O-Level)</div>
+                        <div class="edu-schools">
+                            <div class="edu-school-item">
+                                <div class="school-marker"></div>
+                                <div class="school-info">
+                                    <h4>Kinoni Town Secondary School</h4>
+                                    <span class="school-years"><i class="fas fa-calendar"></i> S.1 – S.3</span>
+                                    <p>Began secondary education, discovering a growing passion for the sciences 
+                                    and mathematics.</p>
+                                </div>
+                            </div>
+                            <div class="edu-school-item">
+                                <div class="school-marker"></div>
+                                <div class="school-info">
+                                    <h4>Angella and John Smith (ANJOS) Science Resource Centre – Kinoni</h4>
+                                    <span class="school-location"><i class="fas fa-map-marker-alt"></i> Kinoni, Lwengo District</span>
+                                    <span class="school-years"><i class="fas fa-calendar"></i> S.3 – S.4</span>
+                                    <p>Transferred to this science-focused institution to strengthen my 
+                                    foundation in scientific disciplines and prepare for national examinations.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="edu-milestone">
+                            <div class="milestone-icon"><i class="fas fa-medal"></i></div>
+                            <div class="milestone-text">
+                                <strong>U.C.E — 2021</strong>
+                                <p>Sat the Uganda Certificate of Education examinations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- A-Level -->
+                <div class="edu-timeline-item" data-aos="fade-right">
+                    <div class="edu-timeline-dot alevel-dot">
+                        <i class="fas fa-atom"></i>
+                    </div>
+                    <div class="edu-timeline-card">
+                        <div class="edu-period-badge alevel-badge">Advanced Level (A-Level)</div>
+                        <div class="edu-schools">
+                            <div class="edu-school-item">
+                                <div class="school-marker"></div>
+                                <div class="school-info">
+                                    <h4>Sseke Secondary School – Kinoni</h4>
+                                    <span class="school-location"><i class="fas fa-map-marker-alt"></i> Kinoni, Lwengo District</span>
+                                    <span class="school-years"><i class="fas fa-calendar"></i> S.5 – S.6</span>
+                                    <p>Pursued the science combination with a focus on the physical sciences and mathematics.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="subject-combination">
+                            <h5><i class="fas fa-layer-group"></i> Subject Combination</h5>
+                            <div class="subject-tags">
+                                <span class="subject-tag physics"><i class="fas fa-atom"></i> Physics</span>
+                                <span class="subject-tag chemistry"><i class="fas fa-flask"></i> Chemistry</span>
+                                <span class="subject-tag maths"><i class="fas fa-square-root-alt"></i> Mathematics</span>
+                                <span class="subject-tag gp"><i class="fas fa-book"></i> General Paper</span>
+                                <span class="subject-tag ict"><i class="fas fa-laptop"></i> Sub ICT</span>
+                            </div>
+                        </div>
+                        <div class="edu-milestone">
+                            <div class="milestone-icon"><i class="fas fa-trophy"></i></div>
+                            <div class="milestone-text">
+                                <strong>U.A.C.E — 2023</strong>
+                                <p>Sat the Uganda Advanced Certificate of Education examinations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- University -->
+                <div class="edu-timeline-item" data-aos="fade-left">
+                    <div class="edu-timeline-dot uni-dot">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <div class="edu-timeline-card uni-card">
+                        <div class="edu-period-badge uni-badge">University — Current</div>
+                        <div class="edu-schools">
+                            <div class="edu-school-item">
+                                <div class="school-marker active-marker"></div>
+                                <div class="school-info">
+                                    <h4>Kyambogo University</h4>
+                                    <span class="school-location"><i class="fas fa-map-marker-alt"></i> Kyambogo, Kampala, Uganda</span>
+                                    <span class="school-years"><i class="fas fa-calendar"></i> 2024/2025 – Present</span>
+                                    <p>Currently pursuing a <strong>Bachelor of Science with Education 
+                                    (Chemistry and Mathematics)</strong> in the Faculty of Science. 
+                                    Passionate about bridging chemistry with computational tools and AI.</p>
+                                    <div class="uni-details">
+                                        <span><i class="fas fa-id-card"></i> Reg: 24/U/ESP/131/GV</span>
+                                        <span><i class="fas fa-layer-group"></i> Year 2, Semester 2</span>
+                                        <span><i class="fas fa-medal"></i> Government Sponsored</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="current-pulse">
+                            <span class="pulse-dot"></span>
+                            <span>Currently Studying Here</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS & INTERESTS -->
+    <section class="content-section alt-bg" id="dev-skills">
+        <div class="section-container">
+            <div class="section-title">
+                <i class="fas fa-tools"></i>
+                <h2>Skills & Interests</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category-card">
+                    <div class="skill-cat-header">
+                        <div class="skill-cat-icon" style="background: linear-gradient(135deg, #e17055, #fab1a0);">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h4>Web Development</h4>
+                        <span class="skill-level">Learning</span>
+                    </div>
+                    <div class="skill-bars">
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-header">
+                                <span>HTML5</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" data-width="75" style="background: linear-gradient(90deg, #e17055, #fab1a0);"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-header">
+                                <span>CSS3</span>
+                                <span>70%</span>
+                            </div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" data-width="70" style="background: linear-gradient(90deg, #0984e3, #74b9ff);"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-header">
+                                <span>JavaScript</span>
+                                <span>60%</span>
+                            </div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" data-width="60" style="background: linear-gradient(90deg, #fdcb6e, #f39c12);"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category-card">
+                    <div class="skill-cat-header">
+                        <div class="skill-cat-icon" style="background: linear-gradient(135deg, #6c5ce7, #a29bfe);">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <h4>Chemistry</h4>
+                        <span class="skill-level">Studying</span>
+                    </div>
+                    <div class="skill-bars">
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-header">
+                                <span>Organic Chemistry</span>
+                                <span>70%</span>
+                            </div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" data-width="70" style="background: linear-gradient(90deg, #6c5ce7, #a29bfe);"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-header">
+                                <span>Analytical Chemistry</span>
+                                <span>65%</span>
+                            </div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" data-width="65" style="background: linear-gradient(90deg, #6c5ce7, #a29bfe);"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-header">
+                                <span>Electrochemistry</span>
+                                <span>60%</span>
+                            </div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" data-width="60" style="background: linear-gradient(90deg, #6c5ce7, #a29bfe);"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category-card">
+                    <div class="skill-cat-header">
+                        <div class="skill-cat-icon" style="background: linear-gradient(135deg, #00b894, #55efc4);">
+                            <i class="fas fa-square-root-alt"></i>
+                        </div>
+                        <h4>Mathematics</h4>
+                        <span class="skill-level">Studying</span>
+                    </div>
+                    <div class="skill-bars">
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-header">
+                                <span>Numerical Analysis</span>
+                                <span>70%</span>
+                            </div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" data-width="70" style="background: linear-gradient(90deg, #00b894, #55efc4);"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-header">
+                                <span>Probability & Statistics</span>
+                                <span>65%</span>
+                            </div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" data-width="65" style="background: linear-gradient(90deg, #00b894, #55efc4);"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="skill-bar-header">
+                                <span>Calculus</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" data-width="75" style="background: linear-gradient(90deg, #00b894, #55efc4);"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category-card">
+                    <div class="skill-cat-header">
+                        <div class="skill-cat-icon" style="background: linear-gradient(135deg, #0984e3, #74b9ff);">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h4>Future Goals</h4>
+                        <span class="skill-level">Aspiring</span>
+                    </div>
+                    <div class="future-goals-list">
+                        <div class="future-goal">
+                            <i class="fas fa-robot"></i>
+                            <span>Artificial Intelligence & Machine Learning</span>
+                        </div>
+                        <div class="future-goal">
+                            <i class="fas fa-atom"></i>
+                            <span>Computational Chemistry</span>
+                        </div>
+                        <div class="future-goal">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Molecular Simulations</span>
+                        </div>
+                        <div class="future-goal">
+                            <i class="fas fa-database"></i>
+                            <span>Data Science & Visualization</span>
+                        </div>
+                        <div class="future-goal">
+                            <i class="fas fa-server"></i>
+                            <span>Full-Stack Development</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FIRST PROJECT -->
+    <section class="content-section" id="dev-projects">
+        <div class="section-container">
+            <div class="section-title">
+                <i class="fas fa-project-diagram"></i>
+                <h2>My First Project</h2>
+            </div>
+            <div class="project-showcase">
+                <div class="showcase-card">
+                    <div class="showcase-header">
+                        <div class="showcase-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="showcase-badge">🎉 First Published Project</div>
+                    </div>
+                    <h3>Faculty of Science — Student Portal</h3>
+                    <p>A comprehensive, interactive web application built for students of the Faculty 
+                    of Science at Kyambogo University. This platform serves as a one-stop hub for 
+                    program information, timetables, course materials sharing, announcements, and 
+                    real-time group communication.</p>
+
+                    <div class="showcase-features">
+                        <h5><i class="fas fa-star"></i> Key Features Built</h5>
+                        <div class="feature-chips">
+                            <span class="feature-chip"><i class="fas fa-calendar-alt"></i> Dynamic Timetables</span>
+                            <span class="feature-chip"><i class="fas fa-plus-circle"></i> Add Courses</span>
+                            <span class="feature-chip"><i class="fas fa-upload"></i> Material Sharing</span>
+                            <span class="feature-chip"><i class="fas fa-bullhorn"></i> Announcements</span>
+                            <span class="feature-chip"><i class="fas fa-comments"></i> Live Group Chat</span>
+                            <span class="feature-chip"><i class="fas fa-heart"></i> Likes & Replies</span>
+                            <span class="feature-chip"><i class="fas fa-filter"></i> Content Filtering</span>
+                            <span class="feature-chip"><i class="fas fa-mobile-alt"></i> Responsive Design</span>
+                        </div>
+                    </div>
+
+                    <div class="tech-stack">
+                        <h5><i class="fas fa-layer-group"></i> Technologies Used</h5>
+                        <div class="tech-icons">
+                            <div class="tech-item">
+                                <div class="tech-icon-box html-tech"><i class="fab fa-html5"></i></div>
+                                <span>HTML5</span>
+                            </div>
+                            <div class="tech-item">
+                                <div class="tech-icon-box css-tech"><i class="fab fa-css3-alt"></i></div>
+                                <span>CSS3</span>
+                            </div>
+                            <div class="tech-item">
+                                <div class="tech-icon-box js-tech"><i class="fab fa-js-square"></i></div>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="tech-item">
+                                <div class="tech-icon-box fa-tech"><i class="fab fa-font-awesome"></i></div>
+                                <span>Font Awesome</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PERSONAL PHILOSOPHY -->
+    <section class="content-section alt-bg" id="dev-philosophy">
+        <div class="section-container">
+            <div class="section-title">
+                <i class="fas fa-lightbulb"></i>
+                <h2>What Drives Me</h2>
+            </div>
+            <div class="philosophy-grid">
+                <div class="philosophy-card">
+                    <div class="phil-number">01</div>
+                    <div class="phil-icon"><i class="fas fa-microscope"></i></div>
+                    <h4>Science Meets Code</h4>
+                    <p>I believe the future of chemistry lies not just in the lab, but in the algorithms 
+                    we write. Every chemical problem is a computational challenge waiting to be solved.</p>
+                </div>
+                <div class="philosophy-card">
+                    <div class="phil-number">02</div>
+                    <div class="phil-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h4>Build to Learn</h4>
+                    <p>I don't just study theory — I build things. This website exists because I believe 
+                    the best way to learn is to create something real that others can use and benefit from.</p>
+                </div>
+                <div class="philosophy-card">
+                    <div class="phil-number">03</div>
+                    <div class="phil-icon"><i class="fas fa-seedling"></i></div>
+                    <h4>Growth Mindset</h4>
+                    <p>From a village in Lwengo to university in Kampala — every challenge is a lesson, 
+                    every setback is setup for a comeback. I embrace continuous learning and improvement.</p>
+                </div>
+                <div class="philosophy-card">
+                    <div class="phil-number">04</div>
+                    <div class="phil-icon"><i class="fas fa-users"></i></div>
+                    <h4>Community Impact</h4>
+                    <p>Technology should serve people. I build tools that help fellow students access 
+                    information easily, collaborate better, and succeed in their academic journeys.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="content-section" id="dev-contact">
+        <div class="section-container">
+            <div class="section-title">
+                <i class="fas fa-paper-plane"></i>
+                <h2>Get In Touch</h2>
+            </div>
+            <p class="section-subtitle">I'm always open to conversations about science, technology, 
+            collaboration, or just a friendly hello. Feel free to reach out!</p>
+
+            <div class="contact-grid">
+                <div class="contact-cards-col">
+                    <div class="contact-card">
+                        <div class="contact-card-icon phone-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-card-info">
+                            <h4>Phone</h4>
+                            <a href="tel:+256702564878">+256 702 564 878</a>
+                            <a href="tel:+256708665747">+256 708 665 747</a>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-card-icon email-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-card-info">
+                            <h4>Email</h4>
+                            <a href="mailto:Kavumarodgersscientist@gmail.com">Kavumarodgersscientist@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-card-icon location-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-card-info">
+                            <h4>Location</h4>
+                            <p>Kyambogo University, Kampala, Uganda</p>
+                            <p class="sub-location">Originally from Kalagala, Lwengo District</p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-card-icon university-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <div class="contact-card-info">
+                            <h4>University</h4>
+                            <p>Faculty of Science</p>
+                            <p class="sub-location">BSc. Ed (Chemistry & Mathematics)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-col">
+                    <div class="contact-form-card">
+                        <h4><i class="fas fa-comment-dots"></i> Send Me a Message</h4>
+                        <form id="contact-dev-form" onsubmit="handleDevContact(event)">
+                            <div class="form-group">
+                                <label for="contact-name">Your Name</label>
+                                <input type="text" id="contact-name" placeholder="e.g. Jane Doe" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-email">Your Email</label>
+                                <input type="email" id="contact-email" placeholder="e.g. jane@example.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-subject">Subject</label>
+                                <input type="text" id="contact-subject" placeholder="e.g. Collaboration Opportunity" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-message">Message</label>
+                                <textarea id="contact-message" rows="5" placeholder="Write your message here..." required></textarea>
+                            </div>
+                            <button type="submit" class="form-submit">
+                                <i class="fas fa-paper-plane"></i> Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INSPIRATIONAL QUOTE -->
+    <section class="dev-quote-section">
+        <div class="section-container">
+            <div class="dev-final-quote">
+                <div class="quote-marks"><i class="fas fa-quote-left"></i></div>
+                <p>This is just the beginning. Every line of code I write, every equation I solve, 
+                and every molecule I study brings me one step closer to a future where science 
+                and technology work hand in hand to solve humanity's greatest challenges.</p>
+                <div class="quote-author">
+                    <span class="qa-name">— Kavuma Rodgers</span>
+                    <span class="qa-title">Aspiring Computational Chemist & Web Developer</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4><i class="fas fa-university"></i> Kyambogo University</h4>
+                <p>Faculty of Science — Student Version site</p>
+                <p>Knowledge and skills for Service</p>
+            </div>
+            <div class="footer-col">
+                <h4><i class="fas fa-link"></i> Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="programs.html">Programs</a>
+                <a href="research.html">Research</a>
+                <a href="developer.html">Developer</a>
+            </div>
+            <div class="footer-col">
+                <h4><i class="fas fa-code"></i> Developer</h4>
+                <p><i class="fas fa-user"></i> Kavuma Rodgers</p>
+                <p><i class="fas fa-envelope"></i> kavumarodgersscientist@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +256 702 564 878</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Designed & Developed with <span style="color: #e74c3c;">❤</span> by <strong>Kavuma Rodgers</strong> | &copy; 2026 Faculty of Science, Kyambogo University</p>
+        </div>
+    </footer>
+
+    <!-- TOAST -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <script>
+        // ===== Toast =====
+        function showToast(message, type = 'success') {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = `toast ${type}`;
+            const icons = { success: 'fa-check-circle', error: 'fa-exclamation-circle', info: 'fa-info-circle' };
+            toast.innerHTML = `<i class="fas ${icons[type]}"></i> ${message}`;
+            container.appendChild(toast);
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateX(40px)';
+                toast.style.transition = '0.4s ease';
+                setTimeout(() => toast.remove(), 400);
+            }, 3500);
+        }
+
+        // ===== Contact Form =====
+        function handleDevContact(e) {
+            e.preventDefault();
+            const name = document.getElementById('contact-name').value;
+            showToast(`Thank you, ${name}! Your message has been sent. I'll respond soon! 📬`, 'success');
+            e.target.reset();
+        }
+
+        // ===== Typewriter Effect =====
+        const titles = [
+            "Aspiring Computational Chemist",
+            "Web Developer",
+            "BSc. Ed Student (Chem/Math)",
+            "Science Enthusiast",
+            "AI & Technology Lover",
+            "Problem Solver"
+        ];
+        let titleIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typewriterEl = document.getElementById('typewriter');
+
+        function typewrite() {
+            const current = titles[titleIndex];
+
+            if (isDeleting) {
+                typewriterEl.textContent = current.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typewriterEl.textContent = current.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let speed = isDeleting ? 40 : 80;
+
+            if (!isDeleting && charIndex === current.length) {
+                speed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                titleIndex = (titleIndex + 1) % titles.length;
+                speed = 400;
+            }
+
+            setTimeout(typewrite, speed);
+        }
+        typewrite();
+
+        // ===== Age Calculator =====
+        function calculateAge() {
+            const birthDate = new Date(2004, 6, 24); // July 24, 2004
+            const today = new Date();
+            let age = today.getFullYear() - birthDate.getFullYear();
+            const m = today.getMonth() - birthDate.getMonth();
+            if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) age--;
+            document.getElementById('dev-age').textContent = age;
+        }
+        calculateAge();
+
+        // ===== Skill Bar Animation =====
+        function animateSkillBars() {
+            document.querySelectorAll('.skill-bar-fill').forEach(bar => {
+                const width = bar.dataset.width;
+                bar.style.width = width + '%';
+            });
+        }
+
+        const skillsSection = document.getElementById('dev-skills');
+        if (skillsSection) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateSkillBars();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.3 });
+            observer.observe(skillsSection);
+        }
+
+        // ===== Photo Fallback =====
+        const devPhoto = document.getElementById('dev-photo');
+        const placeholder = document.getElementById('photo-placeholder');
+        if (devPhoto) {
+            devPhoto.addEventListener('load', () => {
+                placeholder.style.display = 'none';
+                devPhoto.style.display = 'block';
+            });
+            devPhoto.addEventListener('error', () => {
+                devPhoto.style.display = 'none';
+                placeholder.style.display = 'flex';
+            });
+        }
+
+        // ===== Scroll-triggered animations =====
+        const animateOnScroll = () => {
+            document.querySelectorAll('.edu-timeline-item, .philosophy-card, .skill-category-card, .contact-card').forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 80) {
+                    el.classList.add('animate-in');
+                }
+            });
+        };
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>
