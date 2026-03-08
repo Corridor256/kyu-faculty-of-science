@@ -1,33 +1,496 @@
+<!-- ==================== events.html ==================== -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Events - Faculty of Science | Kyambogo University</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
+
+    <!-- NAVIGATION -->
     <nav>
         <div class="logo">
             <img src="kyambogo-logo.png" alt="Kyambogo University Logo" class="logo" width="100" height="100">
         </div>
-       <h1>KYAMBOGO UNIVERSITY</h1>
-        <h1 align="center">Faculty of Science</h1>
+        <h1>KYAMBOGO UNIVERSITY</h1>
+        <h1>Faculty of Science</h1>
         <div class="nav-buttons">
             <a href="index.html" class="nav-button">Home</a>
             <a href="about.html" class="nav-button">About Us</a>
             <a href="programs.html" class="nav-button">Programs</a>
             <a href="research.html" class="nav-button">Research</a>
-            <a href="events.html" class="nav-button">Events</a>
-            </div>
+            <a href="events.html" class="nav-button active-page">Events</a>
+        </div>
     </nav>
-    <h2>Welcome to the Events Page</h2>
-    <p>This is the events page for the Faculty of Science at Kyambogo University.</p>
-    <p>The events page is still under construction. Please feel free to share any ideas for this site.</p>
-    <div class="chat-buttons">
-        <a href="https://wa.me/message/AQWI6FFGM642B1"><button class="whatsapp">WhatsApp</button></a>
-        <a href="mailto:kavumarodgersscientist@gmail.com"><button class="email">Email</button></a>
-    </div>
-</body>
 
+    <!-- HERO -->
+    <section class="page-hero events-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1><i class="fas fa-calendar-star"></i> Events & Activities</h1>
+            <p>Stay updated with seminars, workshops, competitions, and academic events</p>
+            <div class="hero-breadcrumb">
+                <a href="index.html">Home</a> <i class="fas fa-chevron-right"></i> <span>Events</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- EVENT FILTER -->
+    <section class="content-section">
+        <div class="section-container">
+            <div class="section-title">
+                <i class="fas fa-calendar-check"></i>
+                <h2>Upcoming Events</h2>
+            </div>
+            <div class="event-filters">
+                <button class="event-filter-btn active" onclick="filterEvents('all', this)">
+                    <i class="fas fa-th"></i> All Events
+                </button>
+                <button class="event-filter-btn" onclick="filterEvents('seminar', this)">
+                    <i class="fas fa-chalkboard-teacher"></i> Seminars
+                </button>
+                <button class="event-filter-btn" onclick="filterEvents('workshop', this)">
+                    <i class="fas fa-tools"></i> Workshops
+                </button>
+                <button class="event-filter-btn" onclick="filterEvents('competition', this)">
+                    <i class="fas fa-trophy"></i> Competitions
+                </button>
+                <button class="event-filter-btn" onclick="filterEvents('social', this)">
+                    <i class="fas fa-users"></i> Social
+                </button>
+            </div>
+
+            <div class="events-grid" id="events-grid">
+
+                <!-- Event 1 -->
+                <div class="event-card" data-category="seminar">
+                    <div class="event-date-badge">
+                        <span class="event-month">JUL</span>
+                        <span class="event-day">15</span>
+                        <span class="event-year">2025</span>
+                    </div>
+                    <div class="event-image-placeholder seminar-bg">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <div class="event-details">
+                        <div class="event-category-tag seminar">Seminar</div>
+                        <h3>Research Methodology in Science Education</h3>
+                        <p>A faculty-wide seminar exploring modern research methodologies, 
+                        data analysis techniques, and ethical considerations in science education research.</p>
+                        <div class="event-info-row">
+                            <span><i class="fas fa-clock"></i> 10:00 AM – 1:00 PM</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Science Block, Room 201</span>
+                        </div>
+                        <div class="event-info-row">
+                            <span><i class="fas fa-user"></i> Prof. Ssenyonga J.</span>
+                            <span><i class="fas fa-users"></i> Open to all students</span>
+                        </div>
+                        <div class="event-actions">
+                            <button class="event-rsvp" onclick="rsvpEvent(this)">
+                                <i class="far fa-calendar-check"></i> RSVP
+                            </button>
+                            <button class="event-remind" onclick="remindEvent(this)">
+                                <i class="far fa-bell"></i> Remind Me
+                            </button>
+                            <button class="event-share" onclick="shareEvent('Research Methodology Seminar')">
+                                <i class="fas fa-share-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 2 -->
+                <div class="event-card" data-category="workshop">
+                    <div class="event-date-badge">
+                        <span class="event-month">JUL</span>
+                        <span class="event-day">22</span>
+                        <span class="event-year">2025</span>
+                    </div>
+                    <div class="event-image-placeholder workshop-bg">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="event-details">
+                        <div class="event-category-tag workshop">Workshop</div>
+                        <h3>Python for Scientific Computing</h3>
+                        <p>A hands-on workshop introducing Python programming for data analysis, 
+                        numerical simulations, and scientific visualization. No prior coding experience required.</p>
+                        <div class="event-info-row">
+                            <span><i class="fas fa-clock"></i> 9:00 AM – 4:00 PM</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Computer Lab 3</span>
+                        </div>
+                        <div class="event-info-row">
+                            <span><i class="fas fa-user"></i> Dr. Nuwagaba S.</span>
+                            <span><i class="fas fa-users"></i> Limited to 40 students</span>
+                        </div>
+                        <div class="event-actions">
+                            <button class="event-rsvp" onclick="rsvpEvent(this)">
+                                <i class="far fa-calendar-check"></i> RSVP
+                            </button>
+                            <button class="event-remind" onclick="remindEvent(this)">
+                                <i class="far fa-bell"></i> Remind Me
+                            </button>
+                            <button class="event-share" onclick="shareEvent('Python Workshop')">
+                                <i class="fas fa-share-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 3 -->
+                <div class="event-card" data-category="competition">
+                    <div class="event-date-badge">
+                        <span class="event-month">AUG</span>
+                        <span class="event-day">05</span>
+                        <span class="event-year">2025</span>
+                    </div>
+                    <div class="event-image-placeholder competition-bg">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="event-details">
+                        <div class="event-category-tag competition">Competition</div>
+                        <h3>Inter-Faculty Science Quiz 2025</h3>
+                        <p>Annual science quiz competition featuring teams from all faculties. 
+                        Test your knowledge in physics, chemistry, biology, and mathematics. 
+                        Exciting prizes for the top 3 teams!</p>
+                        <div class="event-info-row">
+                            <span><i class="fas fa-clock"></i> 2:00 PM – 5:00 PM</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Main Auditorium</span>
+                        </div>
+                        <div class="event-info-row">
+                            <span><i class="fas fa-user"></i> Science Students' Association</span>
+                            <span><i class="fas fa-award"></i> Cash prizes</span>
+                        </div>
+                        <div class="event-actions">
+                            <button class="event-rsvp" onclick="rsvpEvent(this)">
+                                <i class="far fa-calendar-check"></i> Register Team
+                            </button>
+                            <button class="event-remind" onclick="remindEvent(this)">
+                                <i class="far fa-bell"></i> Remind Me
+                            </button>
+                            <button class="event-share" onclick="shareEvent('Science Quiz 2025')">
+                                <i class="fas fa-share-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 4 -->
+                <div class="event-card" data-category="seminar">
+                    <div class="event-date-badge">
+                        <span class="event-month">AUG</span>
+                        <span class="event-day">12</span>
+                        <span class="event-year">2025</span>
+                    </div>
+                    <div class="event-image-placeholder seminar-bg">
+                        <i class="fas fa-atom"></i>
+                    </div>
+                    <div class="event-details">
+                        <div class="event-category-tag seminar">Seminar</div>
+                        <h3>Nuclear Physics and Its Applications in Medicine</h3>
+                        <p>Guest lecture exploring the applications of nuclear physics in medical 
+                        imaging, cancer treatment, and diagnostic technologies.</p>
+                        <div class="event-info-row">
+                            <span><i class="fas fa-clock"></i> 11:00 AM – 1:00 PM</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Physics Lab Lecture Hall</span>
+                        </div>
+                        <div class="event-info-row">
+                            <span><i class="fas fa-user"></i> Dr. Ochen W.</span>
+                            <span><i class="fas fa-users"></i> Open to all</span>
+                        </div>
+                        <div class="event-actions">
+                            <button class="event-rsvp" onclick="rsvpEvent(this)">
+                                <i class="far fa-calendar-check"></i> RSVP
+                            </button>
+                            <button class="event-remind" onclick="remindEvent(this)">
+                                <i class="far fa-bell"></i> Remind Me
+                            </button>
+                            <button class="event-share" onclick="shareEvent('Nuclear Physics Seminar')">
+                                <i class="fas fa-share-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 5 -->
+                <div class="event-card" data-category="social">
+                    <div class="event-date-badge">
+                        <span class="event-month">AUG</span>
+                        <span class="event-day">20</span>
+                        <span class="event-year">2025</span>
+                    </div>
+                    <div class="event-image-placeholder social-bg">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="event-details">
+                        <div class="event-category-tag social">Social</div>
+                        <h3>Faculty of Science Freshers' Welcome Party</h3>
+                        <p>Join us in welcoming the new Year 1 students! An evening of networking, 
+                        entertainment, faculty introductions, and campus tours.</p>
+                        <div class="event-info-row">
+                            <span><i class="fas fa-clock"></i> 4:00 PM – 8:00 PM</span>
+                            <span><i class="fas fa-map-marker-alt"></i> University Grounds</span>
+                        </div>
+                        <div class="event-info-row">
+                            <span><i class="fas fa-user"></i> Students' Guild</span>
+                            <span><i class="fas fa-music"></i> Live music & food</span>
+                        </div>
+                        <div class="event-actions">
+                            <button class="event-rsvp" onclick="rsvpEvent(this)">
+                                <i class="far fa-calendar-check"></i> I'm Attending
+                            </button>
+                            <button class="event-remind" onclick="remindEvent(this)">
+                                <i class="far fa-bell"></i> Remind Me
+                            </button>
+                            <button class="event-share" onclick="shareEvent('Freshers Welcome Party')">
+                                <i class="fas fa-share-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 6 -->
+                <div class="event-card" data-category="workshop">
+                    <div class="event-date-badge">
+                        <span class="event-month">SEP</span>
+                        <span class="event-day">03</span>
+                        <span class="event-year">2025</span>
+                    </div>
+                    <div class="event-image-placeholder workshop-bg">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <div class="event-details">
+                        <div class="event-category-tag workshop">Workshop</div>
+                        <h3>Laboratory Safety & Best Practices</h3>
+                        <p>Mandatory training workshop on laboratory safety protocols, chemical handling, 
+                        equipment operation, and emergency procedures for all science students.</p>
+                        <div class="event-info-row">
+                            <span><i class="fas fa-clock"></i> 8:00 AM – 12:00 PM</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Chemistry Lab</span>
+                        </div>
+                        <div class="event-info-row">
+                            <span><i class="fas fa-user"></i> Dr. Nanyonga S.</span>
+                            <span><i class="fas fa-exclamation-triangle"></i> Mandatory for Year 1</span>
+                        </div>
+                        <div class="event-actions">
+                            <button class="event-rsvp" onclick="rsvpEvent(this)">
+                                <i class="far fa-calendar-check"></i> Register
+                            </button>
+                            <button class="event-remind" onclick="remindEvent(this)">
+                                <i class="far fa-bell"></i> Remind Me
+                            </button>
+                            <button class="event-share" onclick="shareEvent('Lab Safety Workshop')">
+                                <i class="fas fa-share-alt"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAST EVENTS HIGHLIGHT -->
+    <section class="content-section alt-bg">
+        <div class="section-container">
+            <div class="section-title">
+                <i class="fas fa-history"></i>
+                <h2>Past Event Highlights</h2>
+            </div>
+            <div class="past-events-grid">
+                <div class="past-event-card">
+                    <div class="past-event-overlay">
+                        <span class="past-badge">Completed</span>
+                    </div>
+                    <div class="past-event-icon"><i class="fas fa-flask"></i></div>
+                    <h4>Chemistry Week 2024</h4>
+                    <p>A week-long celebration of chemistry with experiments, demonstrations, 
+                    poster presentations, and guest lectures from industry professionals.</p>
+                    <span class="past-date"><i class="fas fa-calendar"></i> November 2024</span>
+                    <span class="past-attendees"><i class="fas fa-users"></i> 250+ attendees</span>
+                </div>
+                <div class="past-event-card">
+                    <div class="past-event-overlay">
+                        <span class="past-badge">Completed</span>
+                    </div>
+                    <div class="past-event-icon"><i class="fas fa-rocket"></i></div>
+                    <h4>Science Innovation Expo 2024</h4>
+                    <p>Students showcased their innovative science projects, prototypes, and 
+                    research findings. Best projects received funding for further development.</p>
+                    <span class="past-date"><i class="fas fa-calendar"></i> October 2024</span>
+                    <span class="past-attendees"><i class="fas fa-users"></i> 400+ attendees</span>
+                </div>
+                <div class="past-event-card">
+                    <div class="past-event-overlay">
+                        <span class="past-badge">Completed</span>
+                    </div>
+                    <div class="past-event-icon"><i class="fas fa-calculator"></i></div>
+                    <h4>Mathematics Challenge 2024</h4>
+                    <p>An inter-university mathematics competition testing problem-solving 
+                    skills. Kyambogo students placed 2nd overall in the national rankings.</p>
+                    <span class="past-date"><i class="fas fa-calendar"></i> September 2024</span>
+                    <span class="past-attendees"><i class="fas fa-users"></i> 150+ participants</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SUGGEST AN EVENT -->
+    <section class="content-section">
+        <div class="section-container">
+            <div class="section-title">
+                <i class="fas fa-lightbulb"></i>
+                <h2>Suggest an Event</h2>
+            </div>
+            <p class="section-subtitle">Have an idea for a seminar, workshop, or activity? 
+            Submit your suggestion and help shape the Faculty's event calendar!</p>
+            <div class="suggest-form-container">
+                <form id="suggest-event-form" onsubmit="handleSuggestEvent(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="suggest-name">Your Name</label>
+                            <input type="text" id="suggest-name" placeholder="e.g. John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="suggest-email">Your Email</label>
+                            <input type="email" id="suggest-email" placeholder="e.g. john@kyu.ac.ug" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="suggest-type">Event Type</label>
+                            <select id="suggest-type" required>
+                                <option value="">-- Select --</option>
+                                <option value="seminar">Seminar</option>
+                                <option value="workshop">Workshop</option>
+                                <option value="competition">Competition</option>
+                                <option value="social">Social</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="suggest-title">Event Title</label>
+                            <input type="text" id="suggest-title" placeholder="e.g. Data Science Bootcamp" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="suggest-desc">Description</label>
+                        <textarea id="suggest-desc" rows="4" placeholder="Describe your event idea, suggested date, target audience..." required></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">
+                        <i class="fas fa-paper-plane"></i> Submit Suggestion
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4><i class="fas fa-university"></i> Kyambogo University</h4>
+                <p>Faculty of Science — Student Version site</p>
+                <p>Knowledge and skills for Service</p>
+            </div>
+            <div class="footer-col">
+                <h4><i class="fas fa-link"></i> Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="programs.html">Programs</a>
+                <a href="research.html">Research</a>
+            </div>
+            <div class="footer-col">
+                <h4><i class="fas fa-envelope"></i> Contact</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Kyambogo, Kampala, Uganda</p>
+                <p><i class="fas fa-phone"></i> +256 702 564 878</p>
+                <p><i class="fas fa-envelope"></i> kavumarodgersscientist@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Faculty of Science, Kyambogo University. All rights reserved.</p>
+            <p>This site is a trial project developed by KAVUMA RODGERS. Dedicated to the Science Class [2024/2025-2026/2027]</p>
+        </div>
+    </footer>
+
+    <!-- TOAST CONTAINER -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <script>
+        // Toast notification
+        function showToast(message, type = 'success') {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = `toast ${type}`;
+            const icons = { success: 'fa-check-circle', error: 'fa-exclamation-circle', info: 'fa-info-circle' };
+            toast.innerHTML = `<i class="fas ${icons[type]}"></i> ${message}`;
+            container.appendChild(toast);
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateX(40px)';
+                toast.style.transition = '0.4s ease';
+                setTimeout(() => toast.remove(), 400);
+            }, 3500);
+        }
+
+        // Event filter
+        function filterEvents(category, btn) {
+            document.querySelectorAll('.event-filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            document.querySelectorAll('.event-card').forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'flex';
+                    card.style.animation = 'fadeInUp 0.5s ease-out';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // RSVP
+        function rsvpEvent(btn) {
+            if (btn.classList.contains('rsvped')) {
+                btn.classList.remove('rsvped');
+                btn.innerHTML = `<i class="far fa-calendar-check"></i> RSVP`;
+                showToast('RSVP cancelled', 'info');
+            } else {
+                btn.classList.add('rsvped');
+                btn.innerHTML = `<i class="fas fa-calendar-check"></i> Going ✓`;
+                showToast('You\'re registered! See you there! 🎉', 'success');
+            }
+        }
+
+        // Remind
+        function remindEvent(btn) {
+            if (btn.classList.contains('reminded')) {
+                btn.classList.remove('reminded');
+                btn.innerHTML = `<i class="far fa-bell"></i> Remind Me`;
+                showToast('Reminder removed', 'info');
+            } else {
+                btn.classList.add('reminded');
+                btn.innerHTML = `<i class="fas fa-bell"></i> Reminder Set ✓`;
+                showToast('Reminder set! You\'ll be notified 📩', 'success');
+            }
+        }
+
+        // Share
+        function shareEvent(name) {
+            if (navigator.share) {
+                navigator.share({ title: name, text: `Check out this event: ${name}`, url: window.location.href });
+            } else {
+                navigator.clipboard.writeText(window.location.href);
+                showToast('Event link copied to clipboard! 📋', 'info');
+            }
+        }
+
+        // Suggest event form
+        function handleSuggestEvent(e) {
+            e.preventDefault();
+            const title = document.getElementById('suggest-title').value;
+            showToast(`Thank you! Your suggestion "${title}" has been submitted! 💡`, 'success');
+            e.target.reset();
+        }
+    </script>
+</body>
 </html>
