@@ -1,3 +1,7 @@
+// ============================================================
+//  ORIGINAL CODE (PRESERVED)
+// ============================================================
+
 //Calling the buttons from html
 const chemMathBtn = document.getElementById('chem-math-btn');
 const phyMathBtn = document.getElementById('phy-math-btn');
@@ -210,5 +214,458 @@ function showDay(day) {
             document.getElementById(`day-${days[i]}`).style.display = "none";
         }
     }
+    // Highlight active tab
     const tabButtons = document.querySelectorAll('.tab-buttons button');
+    tabButtons.forEach(btn => {
+        btn.classList.remove('active-tab');
+        if (btn.textContent.toLowerCase() === day) {
+            btn.classList.add('active-tab');
+        }
+    });
+}
+
+
+// ============================================================
+//  NEW FEATURES CODE
+// ============================================================
+
+// ---------- UTILITY: Toast Notifications ----------
+function showToast(message, type = 'success') {
+    const container = document.getElementById('toast-container');
+    const toast = document.createElement('div');
+    toast.className = `toast ${type}`;
+    const icons = { success: 'fa-check-circle', error: 'fa-exclamation-circle', info: 'fa-info-circle' };
+    toast.innerHTML = `<i class="fas ${icons[type] || icons.info}"></i> ${message}`;
+    container.appendChild(toast);
+    setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateX(40px)';
+        toast.style.transition = '0.4s ease';
+        setTimeout(() => toast.remove(), 400);
+    }, 3500);
+}
+
+// ---------- UTILITY: Modal Open / Close ----------
+function openModal(id) {
+    document.getElementById(id).classList.add('show');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal(id) {
+    document.getElementById(id).classList.remove('show');
+    document.body.style.overflow = '';
+}
+
+// Close modal on overlay click
+document.querySelectorAll('.modal-overlay').forEach(overlay => {
+    overlay.addEventListener('click', e => {
+        if (e.target === overlay) closeModal(overlay.id);
+    });
+});
+
+// Close modal on Escape key
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+        document.querySelectorAll('.modal-overlay.show').forEach(m => closeModal(m.id));
+    }
+});
+
+// Quick action button listeners
+document.getElementById('open-add-course').addEventListener('click', () => openModal('add-course-modal'));
+document.getElementById('open-share-material').addEventListener('click', () => openModal('share-material-modal'));
+document.getElementById('open-post-announcement').addEventListener('click', () => openModal('post-announcement-modal'));
+document.getElementById('toggle-chat-btn').addEventListener('click', () => toggleChat());
+
+
+// ============================================================
+//  1. ADD YOUR COURSE
+// ============================================================
+function handleAddCourse(e) {
+    e.preventDefault();
+
+    const program = document.getElementById('course-program').value;
+    const code = document.getElementById('course-code').value.trim();
+    const name = document.getElementById('course-name').value.trim();
+    const lecturer = document.getElementById('course-lecturer').value.trim();
+    const day = document.getElementById('course-day').value;
+    const time = document.getElementById('course-time').value;
+
+    // Pick the right data object
+    let target;
+    if (program === 'chem-math') target = chemMathContent;
+    else if (program === 'phy-math') target = phyMathContent;
+    else if (program === 'bio-chem') target = bioChemContent;
+    else return;
+
+    // Add to course units if not already listed
+    const unitStr = `${code} - ${name}`;
+    if (!target.courseUnits.includes(unitStr)) {
+        target.courseUnits.push(unitStr);
+    }
+
+    // Add to timetable
+    target.timetable[day].push({ time, course: name, lecturer, code });
+
+    // Sort the day's slots by time
+    target.timetable[day].sort((a, b) => a.time.localeCompare(b.time));
+
+    closeModal('add-course-modal');
+    e.target.reset();
+    showToast(`"${name}" added to ${program.replace('-', ' & ').toUpperCase()}!`, 'success');
+
+    // Re-render if that programme is currently showing
+    const currentTitle = document.querySelector('#text-area h2');
+    if (currentTitle && currentTitle.textContent === target.name) {
+        showProgramme(target);
+    }
+}
+
+
+// ============================================================
+//  2. SHARE COURSE MATERIALS
+// ============================================================
+// File input display
+const fileInput = document.getElementById('material-file');
+const fileNameDisplay = document.getElementById('file-name-display');
+if (fileInput) {
+    fileInput.addEventListener('change', () => {
+        fileNameDisplay.textContent = fileInput.files.length ? `📎 ${fileInput.files[0].name}` : '';
+    });
+}
+
+function handleShareMaterial(e) {
+    e.preventDefault();
+
+    const title = document.getElementById('material-title').value.trim();
+    const type = document.getElementById('material-type').value;
+    const author = document.getElementById('material-author').value.trim();
+    const desc = document.getElementById('material-description').value.trim();
+    const link = document.getElementById('material-link').value.trim();
+    const file = document.getElementById('material-file').files[0];
+
+    const iconMap = {
+        notes: 'fa-file-alt',
+        'past-paper': 'fa-scroll',
+        link: 'fa-link',
+        other: 'fa-folder-open'
+    };
+
+    const card = document.createElement('div');
+    card.className = 'material-card';
+    card.dataset.type = type;
+    card.innerHTML = `
+        <div class="material-icon ${type}"><i class="fas ${iconMap[type]}"></i></div>
+        <div class="material-info">
+            <h4>${title}</h4>
+            <p class="material-meta"><i class="fas fa-user"></i> Shared by ${author} &bull; <i class="fas fa-tag"></i> ${type.replace('-', ' ')}</p>
+            <p class="material-desc">${desc}</p>
+        </div>
+        <div class="material-actions">
+            ${link ? `<a href="${link}" target="_blank" class="material-download" title="Open link"><i class="fas fa-external-link-alt"></i></a>` : ''}
+            ${file ? `<button class="material-download" title="${file.name}" onclick="alert('File: ${file.name}')"><i class="fas fa-download"></i></button>` : ''}
+        </div>
+    `;
+
+    document.getElementById('materials-list').prepend(card);
+    closeModal('share-material-modal');
+    e.target.reset();
+    fileNameDisplay.textContent = '';
+    showToast(`Material "${title}" shared successfully!`, 'success');
+}
+
+// Material filter
+function filterMaterials(type, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    document.querySelectorAll('.material-card').forEach(card => {
+        card.style.display = (type === 'all' || card.dataset.type === type) ? 'flex' : 'none';
+    });
+}
+
+
+// ============================================================
+//  3. POST ANNOUNCEMENT
+// ============================================================
+function handlePostAnnouncement(e) {
+    e.preventDefault();
+
+    const author = document.getElementById('announce-author').value.trim();
+    const category = document.getElementById('announce-category').value;
+    const title = document.getElementById('announce-title').value.trim();
+    const body = document.getElementById('announce-body').value.trim();
+
+    const now = new Date();
+    const dateStr = now.toLocaleDateString('en-UG', { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+
+    const initials = author.split(' ').map(w => w[0]).join('').toUpperCase().slice(0, 2);
+
+    const card = document.createElement('div');
+    card.className = 'announcement-card';
+    card.dataset.category = category;
+    card.innerHTML = `
+        <div class="announcement-header">
+            <div class="announcement-avatar">${initials}</div>
+            <div class="announcement-meta">
+                <span class="announcement-author">${author}</span>
+                <span class="announcement-date">${dateStr}</span>
+            </div>
+            <span class="announcement-badge badge-${category}">${category.charAt(0).toUpperCase() + category.slice(1)}</span>
+        </div>
+        <h3 class="announcement-title">${title}</h3>
+        <p class="announcement-body">${body}</p>
+        <div class="announcement-footer">
+            <button class="like-btn" onclick="likeAnnouncement(this)"><i class="far fa-heart"></i> <span>0</span></button>
+            <button class="reply-btn" onclick="toggleReply(this)"><i class="far fa-comment"></i> Reply</button>
+        </div>
+        <div class="reply-section" style="display:none;">
+            <div class="replies-container"></div>
+            <div class="reply-input-row">
+                <input type="text" placeholder="Write a reply..." class="reply-input">
+                <button class="reply-send-btn" onclick="sendReply(this)"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    `;
+
+    const list = document.getElementById('announcements-list');
+    // Insert after pinned posts
+    const pinned = list.querySelectorAll('.announcement-card.pinned');
+    if (pinned.length) {
+        pinned[pinned.length - 1].after(card);
+    } else {
+        list.prepend(card);
+    }
+
+    closeModal('post-announcement-modal');
+    e.target.reset();
+    showToast('Announcement posted!', 'success');
+
+    // Smooth scroll to the new announcement
+    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+// Like button toggle
+function likeAnnouncement(btn) {
+    const span = btn.querySelector('span');
+    const icon = btn.querySelector('i');
+    if (btn.classList.contains('liked')) {
+        btn.classList.remove('liked');
+        icon.classList.replace('fas', 'far');
+        span.textContent = Math.max(0, parseInt(span.textContent) - 1);
+    } else {
+        btn.classList.add('liked');
+        icon.classList.replace('far', 'fas');
+        span.textContent = parseInt(span.textContent) + 1;
+    }
+}
+
+// Reply toggle
+function toggleReply(btn) {
+    const card = btn.closest('.announcement-card');
+    const section = card.querySelector('.reply-section');
+    section.style.display = section.style.display === 'none' ? 'block' : 'none';
+    if (section.style.display === 'block') {
+        section.querySelector('.reply-input').focus();
+    }
+}
+
+// Send reply
+function sendReply(btn) {
+    const row = btn.closest('.reply-input-row');
+    const input = row.querySelector('.reply-input');
+    const text = input.value.trim();
+    if (!text) return;
+
+    const container = btn.closest('.reply-section').querySelector('.replies-container');
+    const bubble = document.createElement('div');
+    bubble.className = 'reply-bubble';
+    const now = new Date();
+    const timeStr = now.toLocaleTimeString('en-UG', { hour: '2-digit', minute: '2-digit' });
+    bubble.innerHTML = `<strong>You</strong> · <small>${timeStr}</small><br>${text}`;
+    container.appendChild(bubble);
+    input.value = '';
+    input.focus();
+}
+
+
+// ============================================================
+//  4. GROUP LIVE CHAT
+// ============================================================
+let chatUsername = '';
+let chatOpen = false;
+let unreadCount = 0;
+
+const chatWidget = document.getElementById('chat-widget');
+const chatFab = document.getElementById('chat-fab');
+const chatFabBadge = document.getElementById('chat-fab-badge');
+const chatMessages = document.getElementById('chat-messages');
+const chatBody = document.getElementById('chat-body');
+const chatNameBar = document.getElementById('chat-name-bar');
+const chatInputBar = document.getElementById('chat-input-bar');
+const chatInput = document.getElementById('chat-input');
+const chatJoinBtn = document.getElementById('chat-join-btn');
+const chatSendBtn = document.getElementById('chat-send');
+const chatMinimize = document.getElementById('chat-minimize');
+const chatCloseBtn = document.getElementById('chat-close-btn');
+const chatEmojiBtn = document.getElementById('chat-emoji-btn');
+const emojiPicker = document.getElementById('emoji-picker');
+const chatTyping = document.getElementById('chat-typing');
+
+// Toggle chat open/close
+function toggleChat() {
+    chatOpen = !chatOpen;
+    chatWidget.classList.toggle('open', chatOpen);
+    if (chatOpen) {
+        unreadCount = 0;
+        chatFabBadge.style.display = 'none';
+        scrollChatBottom();
+    }
+}
+
+chatFab.addEventListener('click', toggleChat);
+
+chatCloseBtn.addEventListener('click', () => {
+    chatOpen = false;
+    chatWidget.classList.remove('open');
+});
+
+chatMinimize.addEventListener('click', () => {
+    chatWidget.classList.toggle('minimized');
+});
+
+// Join chat
+chatJoinBtn.addEventListener('click', joinChat);
+document.getElementById('chat-username').addEventListener('keydown', e => {
+    if (e.key === 'Enter') joinChat();
+});
+
+function joinChat() {
+    const nameInput = document.getElementById('chat-username');
+    const name = nameInput.value.trim();
+    if (!name) { nameInput.focus(); return; }
+
+    chatUsername = name;
+    chatNameBar.style.display = 'none';
+    chatInputBar.style.display = 'flex';
+    chatInput.focus();
+
+    addSystemMessage(`${chatUsername} joined the chat 🎉`);
+    showToast(`Welcome, ${chatUsername}!`, 'info');
+
+    // Simulate online count
+    const onlineEl = document.getElementById('online-count');
+    const current = parseInt(onlineEl.textContent) || 1;
+    onlineEl.textContent = `${current + 1} online`;
+}
+
+// Send message
+chatSendBtn.addEventListener('click', sendChatMessage);
+chatInput.addEventListener('keydown', e => {
+    if (e.key === 'Enter') sendChatMessage();
+});
+
+function sendChatMessage() {
+    const text = chatInput.value.trim();
+    if (!text || !chatUsername) return;
+
+    addChatMessage(chatUsername, text, true);
+    chatInput.value = '';
+    chatInput.focus();
+
+    // Simulate bot response occasionally
+    simulateBotResponse(text);
+}
+
+function addChatMessage(name, text, isSelf = false) {
+    const initials = name.split(' ').map(w => w[0]).join('').toUpperCase().slice(0, 2);
+    const now = new Date();
+    const timeStr = now.toLocaleTimeString('en-UG', { hour: '2-digit', minute: '2-digit' });
+
+    const msg = document.createElement('div');
+    msg.className = `chat-msg ${isSelf ? 'self' : ''}`;
+    msg.innerHTML = `
+        <div class="chat-msg-avatar">${initials}</div>
+        <div class="chat-msg-content">
+            <div class="chat-msg-name">${name}</div>
+            <div class="chat-msg-text">${escapeHtml(text)}</div>
+            <div class="chat-msg-time">${timeStr}</div>
+        </div>
+    `;
+    chatMessages.appendChild(msg);
+    scrollChatBottom();
+
+    // If chat is closed, increment badge
+    if (!chatOpen && !isSelf) {
+        unreadCount++;
+        chatFabBadge.textContent = unreadCount;
+        chatFabBadge.style.display = 'flex';
+    }
+}
+
+function addSystemMessage(text) {
+    const msg = document.createElement('div');
+    msg.style.cssText = 'text-align:center; font-size:0.78rem; color:#636e72; padding:6px 0; font-style:italic;';
+    msg.textContent = text;
+    chatMessages.appendChild(msg);
+    scrollChatBottom();
+}
+
+function scrollChatBottom() {
+    setTimeout(() => { chatBody.scrollTop = chatBody.scrollHeight; }, 50);
+}
+
+// Emoji picker
+chatEmojiBtn.addEventListener('click', () => {
+    emojiPicker.style.display = emojiPicker.style.display === 'none' ? 'grid' : 'none';
+});
+
+function insertEmoji(emoji) {
+    chatInput.value += emoji;
+    chatInput.focus();
+    emojiPicker.style.display = 'none';
+}
+
+// Close emoji picker when clicking outside
+document.addEventListener('click', e => {
+    if (!e.target.closest('.emoji-picker') && !e.target.closest('.chat-emoji-btn')) {
+        emojiPicker.style.display = 'none';
+    }
+});
+
+// HTML escape
+function escapeHtml(str) {
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+}
+
+// ---------- Simulated Bot Responses ----------
+const botResponses = [
+    "Hello, I am your ai assistant, feel free to ask any question in this group chat",
+    "That's a great question! 🤔",
+    "Please dont laugh at me, we are just checking if a grroup chat could work",
+    "Has anyone checked the notice board? 📋",
+    "Good luck with the exams everyone! 💪",
+    "Don't forget to submit your coursework! ⏰",
+    "Thanks for sharing! 👍",
+    "Can someone share the notes for that? 📚",
+    "See you all in class tomorrow! 👋",
+    "Please not that this may be a simulated response from the developer not a real time user.",
+    "Let's form a study group this weekend 📖"
+];
+
+function simulateBotResponse(userText) {
+    // 40% chance of a simulated response
+    if (Math.random() > 0.4) return;
+
+    chatTyping.style.display = 'flex';
+    const delay = 1500 + Math.random() * 2000;
+
+    setTimeout(() => {
+        chatTyping.style.display = 'none';
+        const names = ['Allwise', 'Jairus', 'Grace', 'Corridor ai', 'Kakulu', 'Shutter', 'Rhoda'];
+        const randomName = names[Math.floor(Math.random() * names.length)];
+        const randomReply = botResponses[Math.floor(Math.random() * botResponses.length)];
+        addChatMessage(randomName, randomReply, false);
+    }, delay);
 }
