@@ -641,16 +641,13 @@ function escapeHtml(str) {
 
 // ---------- Simulated Bot Responses ----------
 const botResponses = [
-    "Hello, I am your ai assistant, feel free to ask any question in this group chat",
     "That's a great question! 🤔",
-    "Please dont laugh at me, we are just checking if a grroup chat could work",
     "Has anyone checked the notice board? 📋",
     "Good luck with the exams everyone! 💪",
     "Don't forget to submit your coursework! ⏰",
     "Thanks for sharing! 👍",
     "Can someone share the notes for that? 📚",
     "See you all in class tomorrow! 👋",
-    "Please not that this may be a simulated response from the developer not a real time user.",
     "Let's form a study group this weekend 📖"
 ];
 
@@ -663,7 +660,7 @@ function simulateBotResponse(userText) {
 
     setTimeout(() => {
         chatTyping.style.display = 'none';
-        const names = ['Allwise', 'Jairus', 'Grace', 'Corridor ai', 'Kakulu', 'Shutter', 'Rhoda'];
+        const names = ['Alice', 'Brian', 'Grace', 'Moses', 'Sarah', 'David'];
         const randomName = names[Math.floor(Math.random() * names.length)];
         const randomReply = botResponses[Math.floor(Math.random() * botResponses.length)];
         addChatMessage(randomName, randomReply, false);
