@@ -1,33 +1,492 @@
+<!-- ==================== programs.html ==================== -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Programs - Faculty of Science | Kyambogo University</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
+
+    <!-- NAVIGATION -->
     <nav>
         <div class="logo">
             <img src="kyambogo-logo.png" alt="Kyambogo University Logo" class="logo" width="100" height="100">
         </div>
         <h1>KYAMBOGO UNIVERSITY</h1>
-        <h1 align="center">Faculty of Science</h1>
+        <h1>Faculty of Science</h1>
         <div class="nav-buttons">
             <a href="index.html" class="nav-button">Home</a>
             <a href="about.html" class="nav-button">About Us</a>
-            <a href="programs.html" class="nav-button">Programs</a>
+            <a href="programs.html" class="nav-button active-page">Programs</a>
             <a href="research.html" class="nav-button">Research</a>
             <a href="events.html" class="nav-button">Events</a>
-            </div>
+        </div>
     </nav>
-    <h2>Welcome to the Programs Page</h2>
-    <p>This is the programs page for the Faculty of Science at Kyambogo University.</p>
-    <p>The programs page is still under construction. Please feel free to share any ideas for this site.</p>
-    <div class="chat-buttons">
-        <a href="https://wa.me/message/AQWI6FFGM642B1"><button class="whatsapp">WhatsApp</button></a>
-        <a href="mailto:kavumarodgersscientist@gmail.com"><button class="email">Email</button></a>
-    </div>
-</body>
 
+    <!-- PAGE HERO -->
+    <section class="page-hero programs-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1><i class="fas fa-graduation-cap"></i> Academic Programs</h1>
+            <p>Explore our undergraduate and postgraduate programs in science education</p>
+            <div class="hero-breadcrumb">
+                <a href="index.html">Home</a> <i class="fas fa-chevron-right"></i> <span>Programs</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROGRAM LEVEL TABS -->
+    <section class="content-section">
+        <div class="section-container">
+            <div class="section-title">
+                <i class="fas fa-book-reader"></i>
+                <h2>Our Academic Programs</h2>
+            </div>
+            <p class="section-subtitle">The Faculty of Science offers comprehensive programs designed to 
+            produce competent science educators and researchers. Select a level below to explore.</p>
+
+            <div class="program-level-tabs">
+                <button class="level-tab active" onclick="showLevel('undergraduate', this)">
+                    <i class="fas fa-user-graduate"></i> Undergraduate
+                </button>
+                <button class="level-tab" onclick="showLevel('postgraduate', this)">
+                    <i class="fas fa-hat-wizard"></i> Postgraduate
+                </button>
+                <button class="level-tab" onclick="showLevel('phd', this)">
+                    <i class="fas fa-award"></i> PhD Programs
+                </button>
+            </div>
+
+            <!-- UNDERGRADUATE PROGRAMS -->
+            <div class="level-content" id="level-undergraduate">
+                <div class="program-detail-grid">
+
+                    <!-- ESP Chemistry & Mathematics -->
+                    <div class="program-card-full">
+                        <div class="program-card-header chem-gradient">
+                            <div class="program-badge">BSc. Ed</div>
+                            <h3>ESP — Chemistry & Mathematics</h3>
+                            <p class="program-duration"><i class="fas fa-clock"></i> 3 Years | <i class="fas fa-calendar"></i> Full Time</p>
+                        </div>
+                        <div class="program-card-body">
+                            <div class="program-overview">
+                                <h4><i class="fas fa-info-circle"></i> Program Overview</h4>
+                                <p>This program trains students to become competent secondary school teachers 
+                                in Chemistry and Mathematics. It combines deep content knowledge in both 
+                                subjects with pedagogical skills and school practice experience.</p>
+                            </div>
+                            <div class="program-details-grid">
+                                <div class="detail-box">
+                                    <h5><i class="fas fa-flask"></i> Chemistry Courses</h5>
+                                    <ul>
+                                        <li>General Chemistry I & II</li>
+                                        <li>Organic Chemistry I & II</li>
+                                        <li>Physical Chemistry</li>
+                                        <li>Analytical Chemistry</li>
+                                        <li>Kinetics & Electrochemistry</li>
+                                        <li>Chemistry Methods & Research</li>
+                                    </ul>
+                                </div>
+                                <div class="detail-box">
+                                    <h5><i class="fas fa-square-root-alt"></i> Mathematics Courses</h5>
+                                    <ul>
+                                        <li>Calculus I, II & III</li>
+                                        <li>Linear Algebra</li>
+                                        <li>Numerical Analysis</li>
+                                        <li>Probability Theory</li>
+                                        <li>Abstract Algebra</li>
+                                        <li>Mathematics Education</li>
+                                    </ul>
+                                </div>
+                                <div class="detail-box">
+                                    <h5><i class="fas fa-chalkboard-teacher"></i> Education Courses</h5>
+                                    <ul>
+                                        <li>Educational Psychology</li>
+                                        <li>General Methods</li>
+                                        <li>Educational Technology</li>
+                                        <li>Learning Measurement</li>
+                                        <li>School Practice I & II</li>
+                                        <li>Curriculum Studies</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="program-requirements">
+                                <h5><i class="fas fa-clipboard-list"></i> Entry Requirements</h5>
+                                <div class="req-tags">
+                                    <span class="req-tag"><i class="fas fa-check"></i> UACE with at least 2 principal passes</span>
+                                    <span class="req-tag"><i class="fas fa-check"></i> Chemistry at principal level</span>
+                                    <span class="req-tag"><i class="fas fa-check"></i> Mathematics at principal or subsidiary level</span>
+                                    <span class="req-tag"><i class="fas fa-check"></i> Minimum of 2 subsidiary passes</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ESP Physics & Mathematics -->
+                    <div class="program-card-full">
+                        <div class="program-card-header phy-gradient">
+                            <div class="program-badge">BSc. Ed</div>
+                            <h3>ESP — Physics & Mathematics</h3>
+                            <p class="program-duration"><i class="fas fa-clock"></i> 3 Years | <i class="fas fa-calendar"></i> Full Time</p>
+                        </div>
+                        <div class="program-card-body">
+                            <div class="program-overview">
+                                <h4><i class="fas fa-info-circle"></i> Program Overview</h4>
+                                <p>This program equips students with knowledge and skills to teach Physics 
+                                and Mathematics at secondary school level. Students gain hands-on experience 
+                                through laboratory work, field studies, and supervised school practice.</p>
+                            </div>
+                            <div class="program-details-grid">
+                                <div class="detail-box">
+                                    <h5><i class="fas fa-atom"></i> Physics Courses</h5>
+                                    <ul>
+                                        <li>Classical Mechanics</li>
+                                        <li>Electromagnetism I & II</li>
+                                        <li>Digital Electronics</li>
+                                        <li>Nuclear Physics</li>
+                                        <li>Thermodynamics</li>
+                                        <li>Physics Education</li>
+                                    </ul>
+                                </div>
+                                <div class="detail-box">
+                                    <h5><i class="fas fa-square-root-alt"></i> Mathematics Courses</h5>
+                                    <ul>
+                                        <li>Calculus I, II & III</li>
+                                        <li>Linear Algebra</li>
+                                        <li>Numerical Analysis</li>
+                                        <li>Probability Theory</li>
+                                        <li>Real Analysis</li>
+                                        <li>Mathematics Education</li>
+                                    </ul>
+                                </div>
+                                <div class="detail-box">
+                                    <h5><i class="fas fa-chalkboard-teacher"></i> Education Courses</h5>
+                                    <ul>
+                                        <li>Educational Psychology</li>
+                                        <li>General Methods</li>
+                                        <li>Educational Technology</li>
+                                        <li>Learning Measurement</li>
+                                        <li>School Practice I & II</li>
+                                        <li>Curriculum Studies</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="program-requirements">
+                                <h5><i class="fas fa-clipboard-list"></i> Entry Requirements</h5>
+                                <div class="req-tags">
+                                    <span class="req-tag"><i class="fas fa-check"></i> UACE with at least 2 principal passes</span>
+                                    <span class="req-tag"><i class="fas fa-check"></i> Physics at principal level</span>
+                                    <span class="req-tag"><i class="fas fa-check"></i> Mathematics at principal or subsidiary level</span>
+                                    <span class="req-tag"><i class="fas fa-check"></i> Minimum of 2 subsidiary passes</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ESB Biology & Chemistry -->
+                    <div class="program-card-full">
+                        <div class="program-card-header bio-gradient">
+                            <div class="program-badge">BSc. Ed</div>
+                            <h3>ESB — Biology & Chemistry</h3>
+                            <p class="program-duration"><i class="fas fa-clock"></i> 3 Years | <i class="fas fa-calendar"></i> Full Time</p>
+                        </div>
+                        <div class="program-card-body">
+                            <div class="program-overview">
+                                <h4><i class="fas fa-info-circle"></i> Program Overview</h4>
+                                <p>This program prepares students to teach Biology and Chemistry at secondary 
+                                school level. It provides a strong foundation in biological and chemical 
+                                sciences combined with education pedagogy and extensive practical training.</p>
+                            </div>
+                            <div class="program-details-grid">
+                                <div class="detail-box">
+                                    <h5><i class="fas fa-dna"></i> Biology Courses</h5>
+                                    <ul>
+                                        <li>Cell Biology</li>
+                                        <li>Genetics</li>
+                                        <li>Evolution</li>
+                                        <li>Animal Physiology</li>
+                                        <li>Human Ecology</li>
+                                        <li>Biology Education</li>
+                                    </ul>
+                                </div>
+                                <div class="detail-box">
+                                    <h5><i class="fas fa-flask"></i> Chemistry Courses</h5>
+                                    <ul>
+                                        <li>General Chemistry I & II</li>
+                                        <li>Organic Chemistry</li>
+                                        <li>Analytical Chemistry</li>
+                                        <li>Kinetics & Electrochemistry</li>
+                                        <li>Chemistry Methods</li>
+                                        <li>Applied Chemistry</li>
+                                    </ul>
+                                </div>
+                                <div class="detail-box">
+                                    <h5><i class="fas fa-chalkboard-teacher"></i> Education Courses</h5>
+                                    <ul>
+                                        <li>Educational Psychology</li>
+                                        <li>General Methods</li>
+                                        <li>Educational Technology</li>
+                                        <li>Learning Measurement</li>
+                                        <li>School Practice I & II</li>
+                                        <li>Curriculum Studies</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="program-requirements">
+                                <h5><i class="fas fa-clipboard-list"></i> Entry Requirements</h5>
+                                <div class="req-tags">
+                                    <span class="req-tag"><i class="fas fa-check"></i> UACE with at least 2 principal passes</span>
+                                    <span class="req-tag"><i class="fas fa-check"></i> Biology at principal level</span>
+                                    <span class="req-tag"><i class="fas fa-check"></i> Chemistry at principal or subsidiary level</span>
+                                    <span class="req-tag"><i class="fas fa-check"></i> Minimum of 2 subsidiary passes</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- POSTGRADUATE PROGRAMS -->
+            <div class="level-content" id="level-postgraduate" style="display:none;">
+                <div class="program-detail-grid">
+                    <div class="program-card-full">
+                        <div class="program-card-header pg-gradient">
+                            <div class="program-badge">MSc.</div>
+                            <h3>Master of Science in Chemistry</h3>
+                            <p class="program-duration"><i class="fas fa-clock"></i> 2 Years | <i class="fas fa-calendar"></i> Full/Part Time</p>
+                        </div>
+                        <div class="program-card-body">
+                            <div class="program-overview">
+                                <h4><i class="fas fa-info-circle"></i> Program Overview</h4>
+                                <p>An advanced program focusing on specialized areas of chemistry including 
+                                organic synthesis, environmental chemistry, and materials science. Students 
+                                conduct original research and submit a thesis.</p>
+                            </div>
+                            <div class="program-requirements">
+                                <h5><i class="fas fa-clipboard-list"></i> Entry Requirements</h5>
+                                <div class="req-tags">
+                                    <span class="req-tag"><i class="fas fa-check"></i> Bachelor's degree in Chemistry or related field</span>
+                                    <span class="req-tag"><i class="fas fa-check"></i> Minimum of Second Class Upper division</span>
+                                    <span class="req-tag"><i class="fas fa-check"></i> Two academic referees</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="program-card-full">
+                        <div class="program-card-header pg-gradient">
+                            <div class="program-badge">MSc.</div>
+                            <h3>Master of Science in Physics</h3>
+                            <p class="program-duration"><i class="fas fa-clock"></i> 2 Years | <i class="fas fa-calendar"></i> Full/Part Time</p>
+                        </div>
+                        <div class="program-card-body">
+                            <div class="program-overview">
+                                <h4><i class="fas fa-info-circle"></i> Program Overview</h4>
+                                <p>Covers advanced topics in theoretical and applied physics. Research areas 
+                                include renewable energy, nuclear physics applications, and condensed matter physics.</p>
+                            </div>
+                            <div class="program-requirements">
+                                <h5><i class="fas fa-clipboard-list"></i> Entry Requirements</h5>
+                                <div class="req-tags">
+                                    <span class="req-tag"><i class="fas fa-check"></i> Bachelor's degree in Physics or related field</span>
+                                    <span class="req-tag"><i class="fas fa-check"></i> Minimum of Second Class Upper division</span>
+                                    <span class="req-tag"><i class="fas fa-check"></i> Research proposal</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="program-card-full">
+                        <div class="program-card-header pg-gradient">
+                            <div class="program-badge">MSc.</div>
+                            <h3>Master of Science in Biology</h3>
+                            <p class="program-duration"><i class="fas fa-clock"></i> 2 Years | <i class="fas fa-calendar"></i> Full/Part Time</p>
+                        </div>
+                        <div class="program-card-body">
+                            <div class="program-overview">
+                                <h4><i class="fas fa-info-circle"></i> Program Overview</h4>
+                                <p>Specializations available in molecular biology, ecology, conservation biology, 
+                                and genetics. Combines coursework with field research and laboratory investigations.</p>
+                            </div>
+                            <div class="program-requirements">
+                                <h5><i class="fas fa-clipboard-list"></i> Entry Requirements</h5>
+                                <div class="req-tags">
+                                    <span class="req-tag"><i class="fas fa-check"></i> Bachelor's degree in Biology or related field</span>
+                                    <span class="req-tag"><i class="fas fa-check"></i> Minimum of Second Class Upper division</span>
+                                    <span class="req-tag"><i class="fas fa-check"></i> Research proposal</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="program-card-full">
+                        <div class="program-card-header pg-gradient">
+                            <div class="program-badge">PGDE</div>
+                            <h3>Postgraduate Diploma in Education</h3>
+                            <p class="program-duration"><i class="fas fa-clock"></i> 1 Year | <i class="fas fa-calendar"></i> Full Time</p>
+                        </div>
+                        <div class="program-card-body">
+                            <div class="program-overview">
+                                <h4><i class="fas fa-info-circle"></i> Program Overview</h4>
+                                <p>Designed for science graduates who wish to obtain teaching qualifications. 
+                                Covers pedagogy, curriculum design, assessment, and supervised school practice.</p>
+                            </div>
+                            <div class="program-requirements">
+                                <h5><i class="fas fa-clipboard-list"></i> Entry Requirements</h5>
+                                <div class="req-tags">
+                                    <span class="req-tag"><i class="fas fa-check"></i> Bachelor's degree in a science discipline</span>
+                                    <span class="req-tag"><i class="fas fa-check"></i> Minimum of Second Class Lower division</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PhD PROGRAMS -->
+            <div class="level-content" id="level-phd" style="display:none;">
+                <div class="program-detail-grid">
+                    <div class="program-card-full">
+                        <div class="program-card-header phd-gradient">
+                            <div class="program-badge">PhD</div>
+                            <h3>Doctor of Philosophy in Science Education</h3>
+                            <p class="program-duration"><i class="fas fa-clock"></i> 3–5 Years | <i class="fas fa-calendar"></i> Full/Part Time</p>
+                        </div>
+                        <div class="program-card-body">
+                            <div class="program-overview">
+                                <h4><i class="fas fa-info-circle"></i> Program Overview</h4>
+                                <p>This doctoral program focuses on advancing knowledge in science education 
+                                through original research. Areas include curriculum development, pedagogical 
+                                innovations, assessment strategies, and STEM education policy.</p>
+                            </div>
+                            <div class="program-requirements">
+                                <h5><i class="fas fa-clipboard-list"></i> Entry Requirements</h5>
+                                <div class="req-tags">
+                                    <span class="req-tag"><i class="fas fa-check"></i> Master's degree in a relevant discipline</span>
+                                    <span class="req-tag"><i class="fas fa-check"></i> Published research is an advantage</span>
+                                    <span class="req-tag"><i class="fas fa-check"></i> Detailed research proposal</span>
+                                    <span class="req-tag"><i class="fas fa-check"></i> Two academic referees</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="program-card-full">
+                        <div class="program-card-header phd-gradient">
+                            <div class="program-badge">PhD</div>
+                            <h3>Doctor of Philosophy in Chemistry / Physics / Biology / Mathematics</h3>
+                            <p class="program-duration"><i class="fas fa-clock"></i> 3–5 Years | <i class="fas fa-calendar"></i> Full/Part Time</p>
+                        </div>
+                        <div class="program-card-body">
+                            <div class="program-overview">
+                                <h4><i class="fas fa-info-circle"></i> Program Overview</h4>
+                                <p>Discipline-specific doctoral programs allowing in-depth research in specialized 
+                                areas. Candidates work under experienced supervisors and contribute new knowledge 
+                                to their respective fields through a doctoral thesis.</p>
+                            </div>
+                            <div class="program-requirements">
+                                <h5><i class="fas fa-clipboard-list"></i> Entry Requirements</h5>
+                                <div class="req-tags">
+                                    <span class="req-tag"><i class="fas fa-check"></i> Master's degree in the relevant science discipline</span>
+                                    <span class="req-tag"><i class="fas fa-check"></i> Strong research background</span>
+                                    <span class="req-tag"><i class="fas fa-check"></i> Comprehensive research proposal</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACADEMIC CALENDAR HIGHLIGHTS -->
+    <section class="content-section alt-bg">
+        <div class="section-container">
+            <div class="section-title">
+                <i class="fas fa-calendar-alt"></i>
+                <h2>Academic Calendar Highlights</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"><i class="fas fa-door-open"></i></div>
+                    <div class="timeline-content">
+                        <h4>Semester I — August</h4>
+                        <p>Registration opens. Orientation week for new students. Lectures begin mid-August.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"><i class="fas fa-pen"></i></div>
+                    <div class="timeline-content">
+                        <h4>Mid-Semester Tests — October</h4>
+                        <p>Coursework tests, assignments, and practical assessments.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"><i class="fas fa-file-alt"></i></div>
+                    <div class="timeline-content">
+                        <h4>End of Semester Exams — December</h4>
+                        <p>Final examinations for Semester I. Results released in January.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"><i class="fas fa-book-open"></i></div>
+                    <div class="timeline-content">
+                        <h4>Semester II — February</h4>
+                        <p>Registration and lectures resume. New course units begin.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"><i class="fas fa-school"></i></div>
+                    <div class="timeline-content">
+                        <h4>School Practice — April/May</h4>
+                        <p>Year 2 and Year 3 students go for supervised teaching practice in secondary schools.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"><i class="fas fa-trophy"></i></div>
+                    <div class="timeline-content">
+                        <h4>Graduation — July</h4>
+                        <p>Annual graduation ceremony at Kyambogo University main grounds.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4><i class="fas fa-university"></i> Kyambogo University</h4>
+                <p>Faculty of Science — Student Version site</p>
+                <p>Knowledge and skills for Service</p>
+            </div>
+            <div class="footer-col">
+                <h4><i class="fas fa-link"></i> Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="programs.html">Programs</a>
+                <a href="research.html">Research</a>
+            </div>
+            <div class="footer-col">
+                <h4><i class="fas fa-envelope"></i> Contact</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Kyambogo, Kampala, Uganda</p>
+                <p><i class="fas fa-phone"></i> +256 702 564 878</p>
+                <p><i class="fas fa-envelope"></i> kavumarodgersscientist@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Faculty of Science, Kyambogo University. All rights reserved. </p>
+            <p>This site is a trial project developed by KAVUMA RODGERS. Dedicated to the Science Class [2024/2025-2026/2027]</p>
+        </div>
+    </footer>
+
+    <script>
+        function showLevel(level, btn) {
+            document.querySelectorAll('.level-content').forEach(el => el.style.display = 'none');
+            document.querySelectorAll('.level-tab').forEach(b => b.classList.remove('active'));
+            document.getElementById('level-' + level).style.display = 'block';
+            btn.classList.add('active');
+        }
+    </script>
+</body>
 </html>
