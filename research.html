@@ -1,33 +1,350 @@
+<!-- ==================== research.html ==================== -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Research - Faculty of Science | Kyambogo University</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
+
+    <!-- NAVIGATION -->
     <nav>
         <div class="logo">
             <img src="kyambogo-logo.png" alt="Kyambogo University Logo" class="logo" width="100" height="100">
         </div>
         <h1>KYAMBOGO UNIVERSITY</h1>
-        <h1 align="center">Faculty of Science</h1>
+        <h1>Faculty of Science</h1>
         <div class="nav-buttons">
             <a href="index.html" class="nav-button">Home</a>
             <a href="about.html" class="nav-button">About Us</a>
             <a href="programs.html" class="nav-button">Programs</a>
-            <a href="research.html" class="nav-button">Research</a>
+            <a href="research.html" class="nav-button active-page">Research</a>
             <a href="events.html" class="nav-button">Events</a>
-            </div>
+        </div>
     </nav>
-    <h2>Welcome to the Research Page</h2>
-    <p>This is the Research page for the Faculty of Science at Kyambogo University.</p>
-    <p>The Research page is still under construction. Please feel free to share any ideas for this site.</p>
-    <div class="chat-buttons">
-        <a href="https://wa.me/message/AQWI6FFGM642B1"><button class="whatsapp">WhatsApp</button></a>
-        <a href="mailto:kavumarodgersscientist@gmail.com"><button class="email">Email</button></a>
-    </div>
-</body>
 
+    <!-- HERO -->
+    <section class="page-hero research-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1><i class="fas fa-microscope"></i> Research & Innovation</h1>
+            <p>Advancing scientific knowledge through impactful research and collaboration</p>
+            <div class="hero-breadcrumb">
+                <a href="index.html">Home</a> <i class="fas fa-chevron-right"></i> <span>Research</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESEARCH OVERVIEW -->
+    <section class="content-section">
+        <div class="section-container">
+            <div class="section-title">
+                <i class="fas fa-flask"></i>
+                <h2>Research at the Faculty of Science</h2>
+            </div>
+            <div class="research-intro-grid">
+                <div class="research-intro-text">
+                    <p>The Faculty of Science at Kyambogo University is committed to conducting 
+                    cutting-edge research that addresses local, regional, and global challenges. 
+                    Our research spans multiple scientific disciplines including chemistry, physics, 
+                    biology, mathematics, and science education.</p>
+                    <p>Faculty members and students collaborate on projects that range from environmental 
+                    sustainability and public health to renewable energy and educational pedagogy. We 
+                    actively seek partnerships with national and international research institutions.</p>
+                    <div class="research-stats-row">
+                        <div class="r-stat">
+                            <i class="fas fa-file-alt"></i>
+                            <strong>120+</strong>
+                            <span>Publications</span>
+                        </div>
+                        <div class="r-stat">
+                            <i class="fas fa-project-diagram"></i>
+                            <strong>35+</strong>
+                            <span>Active Projects</span>
+                        </div>
+                        <div class="r-stat">
+                            <i class="fas fa-handshake"></i>
+                            <strong>15+</strong>
+                            <span>Partnerships</span>
+                        </div>
+                        <div class="r-stat">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <strong>8</strong>
+                            <span>Funded Grants</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESEARCH AREAS -->
+    <section class="content-section alt-bg">
+        <div class="section-container">
+            <div class="section-title">
+                <i class="fas fa-search"></i>
+                <h2>Research Focus Areas</h2>
+            </div>
+            <div class="research-areas-grid">
+                <div class="research-area-card">
+                    <div class="ra-icon" style="background: linear-gradient(135deg, #6c5ce7, #a29bfe);">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h4>Environmental Chemistry</h4>
+                    <p>Investigating water quality, soil contamination, pesticide residues, 
+                    and sustainable waste management solutions for Uganda and East Africa.</p>
+                    <div class="ra-tags">
+                        <span>Water Quality</span>
+                        <span>Soil Analysis</span>
+                        <span>Green Chemistry</span>
+                    </div>
+                </div>
+                <div class="research-area-card">
+                    <div class="ra-icon" style="background: linear-gradient(135deg, #00b894, #55efc4);">
+                        <i class="fas fa-solar-panel"></i>
+                    </div>
+                    <h4>Renewable Energy</h4>
+                    <p>Research on solar energy systems, biogas technology, and energy-efficient 
+                    materials to support Uganda's clean energy transition.</p>
+                    <div class="ra-tags">
+                        <span>Solar Cells</span>
+                        <span>Biogas</span>
+                        <span>Energy Storage</span>
+                    </div>
+                </div>
+                <div class="research-area-card">
+                    <div class="ra-icon" style="background: linear-gradient(135deg, #e17055, #fab1a0);">
+                        <i class="fas fa-dna"></i>
+                    </div>
+                    <h4>Genetics & Molecular Biology</h4>
+                    <p>Studies in genetic diversity, crop improvement, disease resistance, 
+                    and molecular diagnostics for tropical diseases.</p>
+                    <div class="ra-tags">
+                        <span>Genomics</span>
+                        <span>Crop Science</span>
+                        <span>Diagnostics</span>
+                    </div>
+                </div>
+                <div class="research-area-card">
+                    <div class="ra-icon" style="background: linear-gradient(135deg, #fdcb6e, #f39c12);">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <h4>Biodiversity & Conservation</h4>
+                    <p>Documenting and preserving Uganda's rich biodiversity through ecological 
+                    surveys, habitat assessment, and community-based conservation programs.</p>
+                    <div class="ra-tags">
+                        <span>Ecology</span>
+                        <span>Wildlife</span>
+                        <span>Wetlands</span>
+                    </div>
+                </div>
+                <div class="research-area-card">
+                    <div class="ra-icon" style="background: linear-gradient(135deg, #0984e3, #74b9ff);">
+                        <i class="fas fa-chalkboard"></i>
+                    </div>
+                    <h4>Science Education Research</h4>
+                    <p>Investigating effective teaching methods, curriculum design, technology 
+                    integration, and student learning outcomes in science classrooms.</p>
+                    <div class="ra-tags">
+                        <span>Pedagogy</span>
+                        <span>STEM</span>
+                        <span>Assessment</span>
+                    </div>
+                </div>
+                <div class="research-area-card">
+                    <div class="ra-icon" style="background: linear-gradient(135deg, #636e72, #b2bec3);">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h4>Applied Mathematics & Statistics</h4>
+                    <p>Mathematical modeling of infectious diseases, population dynamics, 
+                    climate patterns, and statistical analysis for social research.</p>
+                    <div class="ra-tags">
+                        <span>Modeling</span>
+                        <span>Data Science</span>
+                        <span>Epidemiology</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RECENT PUBLICATIONS -->
+    <section class="content-section">
+        <div class="section-container">
+            <div class="section-title">
+                <i class="fas fa-book"></i>
+                <h2>Recent Publications</h2>
+            </div>
+            <div class="publications-list">
+                <div class="publication-card">
+                    <div class="pub-year">2024</div>
+                    <div class="pub-info">
+                        <h4>Assessment of Heavy Metal Contamination in Lake Victoria Tributaries</h4>
+                        <p class="pub-authors"><i class="fas fa-users"></i> Kyomuhimbo H.D., Masa J., et al.</p>
+                        <p class="pub-journal"><i class="fas fa-journal-whills"></i> East African Journal of Environmental Science, Vol. 18(2), pp. 45-62</p>
+                        <div class="pub-tags">
+                            <span>Environmental Chemistry</span>
+                            <span>Peer Reviewed</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="publication-card">
+                    <div class="pub-year">2024</div>
+                    <div class="pub-info">
+                        <h4>Mathematical Modeling of Malaria Transmission Dynamics in Uganda</h4>
+                        <p class="pub-authors"><i class="fas fa-users"></i> Nuwagaba S., Nampala H.</p>
+                        <p class="pub-journal"><i class="fas fa-journal-whills"></i> Journal of Mathematical Biology, Vol. 42(1), pp. 112-130</p>
+                        <div class="pub-tags">
+                            <span>Applied Mathematics</span>
+                            <span>Epidemiology</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="publication-card">
+                    <div class="pub-year">2023</div>
+                    <div class="pub-info">
+                        <h4>Effect of Interactive Simulations on Physics Learning Outcomes in Secondary Schools</h4>
+                        <p class="pub-authors"><i class="fas fa-users"></i> Mbambu J., Okullo M., Bakulu T.</p>
+                        <p class="pub-journal"><i class="fas fa-journal-whills"></i> International Journal of Science Education, Vol. 35(4), pp. 201-218</p>
+                        <div class="pub-tags">
+                            <span>Physics Education</span>
+                            <span>Technology</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="publication-card">
+                    <div class="pub-year">2023</div>
+                    <div class="pub-info">
+                        <h4>Genetic Diversity of Indigenous Bean Varieties in Eastern Uganda</h4>
+                        <p class="pub-authors"><i class="fas fa-users"></i> Kigozi S., Muwonge A., Amatre G.</p>
+                        <p class="pub-journal"><i class="fas fa-journal-whills"></i> African Journal of Biotechnology, Vol. 22(8), pp. 88-103</p>
+                        <div class="pub-tags">
+                            <span>Genetics</span>
+                            <span>Agriculture</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="publication-card">
+                    <div class="pub-year">2023</div>
+                    <div class="pub-info">
+                        <h4>Solar Cell Efficiency Enhancement Using Locally Sourced Materials</h4>
+                        <p class="pub-authors"><i class="fas fa-users"></i> Ochen W., Bakulu T.</p>
+                        <p class="pub-journal"><i class="fas fa-journal-whills"></i> Renewable Energy Research, Vol. 15(3), pp. 156-170</p>
+                        <div class="pub-tags">
+                            <span>Renewable Energy</span>
+                            <span>Materials Science</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESEARCH PROJECTS -->
+    <section class="content-section alt-bg">
+        <div class="section-container">
+            <div class="section-title">
+                <i class="fas fa-project-diagram"></i>
+                <h2>Ongoing Research Projects</h2>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-status ongoing">Ongoing</div>
+                    <h4>Water Quality Monitoring in Kampala's Urban Streams</h4>
+                    <p>A multi-year project assessing chemical and biological water quality parameters 
+                    in streams affected by urbanization and industrial discharge.</p>
+                    <div class="project-meta">
+                        <span><i class="fas fa-user"></i> Dr. Kyomuhimbo H.D.</span>
+                        <span><i class="fas fa-calendar"></i> 2023 – 2025</span>
+                    </div>
+                    <div class="project-progress">
+                        <div class="progress-bar" style="width: 65%;"></div>
+                        <span>65% Complete</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-status ongoing">Ongoing</div>
+                    <h4>STEM Teaching Effectiveness in Rural Secondary Schools</h4>
+                    <p>Evaluating the impact of training interventions on science teaching quality 
+                    in under-resourced rural schools across Eastern Uganda.</p>
+                    <div class="project-meta">
+                        <span><i class="fas fa-user"></i> Dr. Namuwaya J.</span>
+                        <span><i class="fas fa-calendar"></i> 2024 – 2026</span>
+                    </div>
+                    <div class="project-progress">
+                        <div class="progress-bar" style="width: 30%;"></div>
+                        <span>30% Complete</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-status completed">Completed</div>
+                    <h4>Biogas Production from Agricultural Waste in Kyambogo</h4>
+                    <p>A pilot project demonstrating the feasibility of small-scale biogas digesters 
+                    using locally available agricultural waste materials.</p>
+                    <div class="project-meta">
+                        <span><i class="fas fa-user"></i> Dr. Okullo M.</span>
+                        <span><i class="fas fa-calendar"></i> 2022 – 2024</span>
+                    </div>
+                    <div class="project-progress">
+                        <div class="progress-bar completed-bar" style="width: 100%;"></div>
+                        <span>100% Complete</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALL FOR COLLABORATION -->
+    <section class="content-section">
+        <div class="section-container">
+            <div class="cta-banner">
+                <div class="cta-text">
+                    <h3><i class="fas fa-hands-helping"></i> Interested in Research Collaboration?</h3>
+                    <p>We welcome partnerships with researchers, institutions, and organizations. 
+                    Whether you're a student looking for a research opportunity or an organization 
+                    seeking academic collaboration, get in touch with us.</p>
+                </div>
+                <div class="cta-actions">
+                    <a href="mailto:science@kyu.ac.ug" class="cta-btn primary-cta">
+                        <i class="fas fa-envelope"></i> Contact Us
+                    </a>
+                    <a href="programs.html" class="cta-btn secondary-cta">
+                        <i class="fas fa-graduation-cap"></i> View Programs
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4><i class="fas fa-university"></i> Kyambogo University</h4>
+                <p>Faculty of Science — Student Version site</p>
+                <p>Knowledge and skills for Service</p>
+            </div>
+            <div class="footer-col">
+                <h4><i class="fas fa-link"></i> Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="programs.html">Programs</a>
+                <a href="research.html">Research</a>
+            </div>
+            <div class="footer-col">
+                <h4><i class="fas fa-envelope"></i> Contact</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Kyambogo, Kampala, Uganda</p>
+                <p><i class="fas fa-phone"></i> +256 702 564 878</p>
+                <p><i class="fas fa-envelope"></i> kavumarodgersscientist@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Faculty of Science, Kyambogo University. All rights reserved. </p>
+            <p>This site is a trial project developed by KAVUMA RODGERS. Dedicated to the Science Class [2024/2025-2026/2027]</p>
+        </div>
+    </footer>
+</body>
 </html>
