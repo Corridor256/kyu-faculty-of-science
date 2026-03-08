@@ -49,7 +49,7 @@ nav {
   align-items: center;
   flex-wrap: wrap;
   gap: 20px;
-  position: relative;
+  position: ;
   top: 0;
   z-index: 1000;
   box-shadow: 0 4px 25px rgba(26, 39, 68, 0.35);
@@ -1840,4 +1840,5 @@ footer {
     gap: 30px;
   }
 }
+
 
