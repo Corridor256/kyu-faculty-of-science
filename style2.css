@@ -1,0 +1,618 @@
+/* ===== CSS Reset & Base ===== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #1a2744;
+  --primary-light: #2c4a7c;
+  --accent: #d4a843;
+  --accent-hover: #e6be5a;
+  --bg: #f0f2f5;
+  --card-bg: #ffffff;
+  --text: #2d3436;
+  --text-light: #636e72;
+  --border: #dfe6e9;
+  --success: #27ae60;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.15);
+  --radius: 12px;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ===== Navigation Bar ===== */
+nav {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  color: #fff;
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 25px rgba(26, 39, 68, 0.35);
+}
+
+nav .logo {
+  flex-shrink: 0;
+}
+
+nav .logo img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid var(--accent);
+  object-fit: cover;
+  transition: transform var(--transition);
+  background: #fff;
+}
+
+nav .logo img:hover {
+  transform: rotate(10deg) scale(1.08);
+}
+
+nav h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  line-height: 1.3;
+}
+
+nav h1:first-of-type {
+  font-size: 1.6rem;
+  color: var(--accent);
+}
+
+nav h1:last-of-type {
+  font-size: 1.1rem;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+.nav-buttons {
+  margin-left: auto;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.nav-button {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(4px);
+}
+
+.nav-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  transition: left 0.5s;
+}
+
+.nav-button:hover::before {
+  left: 100%;
+}
+
+.nav-button:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(212, 168, 67, 0.4);
+}
+
+/* ===== Welcome Section ===== */
+.welcome-container {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 0 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.welcome,
+.faculty-info {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 40px;
+  box-shadow: var(--shadow);
+  transition: all var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.welcome::before,
+.faculty-info::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+}
+
+.welcome:hover,
+.faculty-info:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.welcome h2 {
+  color: var(--primary);
+  font-size: 1.6rem;
+  margin-bottom: 18px;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.welcome h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+.welcome p,
+.faculty-info p {
+  color: var(--text-light);
+  font-size: 1.02rem;
+  line-height: 1.85;
+}
+
+.faculty-info h3 {
+  color: var(--primary);
+  font-size: 1.35rem;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.faculty-info h3::before {
+  content: '🎓';
+  font-size: 1.4rem;
+}
+
+/* ===== Program Selection ===== */
+h4 {
+  text-align: center;
+  font-size: 1.35rem;
+  color: var(--primary);
+  margin: 40px 0 20px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.program-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 0 30px 40px;
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.program-buttons button {
+  padding: 18px 36px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all var(--transition);
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.program-buttons button::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 50%;
+  left: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.program-buttons button:active::after {
+  width: 300px;
+  height: 300px;
+}
+
+#chem-math-btn {
+  background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+  color: #fff;
+}
+
+#chem-math-btn:hover {
+  background: linear-gradient(135deg, #5b4cdb, #8c83f7);
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 8px 25px rgba(108, 92, 231, 0.45);
+}
+
+#phy-math-btn {
+  background: linear-gradient(135deg, #00b894, #55efc4);
+  color: #fff;
+}
+
+#phy-math-btn:hover {
+  background: linear-gradient(135deg, #00a382, #3de3b3);
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 8px 25px rgba(0, 184, 148, 0.45);
+}
+
+#bio-chem-btn {
+  background: linear-gradient(135deg, #e17055, #fab1a0);
+  color: #fff;
+}
+
+#bio-chem-btn:hover {
+  background: linear-gradient(135deg, #d35944, #f79f8e);
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 8px 25px rgba(225, 112, 85, 0.45);
+}
+
+/* ===== Text Area / Dynamic Content ===== */
+#text-area {
+  max-width: 1200px;
+  margin: 0 auto 60px;
+  padding: 0 30px;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+#text-area h2 {
+  color: var(--primary);
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 3px solid var(--accent);
+  display: inline-block;
+  width: 100%;
+}
+
+#text-area > p {
+  background: var(--card-bg);
+  padding: 28px 32px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  color: var(--text-light);
+  font-size: 1.05rem;
+  line-height: 1.85;
+  margin-bottom: 30px;
+  border-left: 5px solid var(--accent);
+}
+
+#text-area h3 {
+  color: var(--primary);
+  font-size: 1.3rem;
+  margin: 30px 0 14px;
+  padding-left: 14px;
+  border-left: 4px solid var(--accent);
+}
+
+#text-area ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+#text-area ul li {
+  background: var(--card-bg);
+  padding: 14px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all var(--transition);
+  position: relative;
+  padding-left: 36px;
+  font-size: 0.95rem;
+  border: 1px solid var(--border);
+}
+
+#text-area ul li::before {
+  content: '✦';
+  position: absolute;
+  left: 14px;
+  color: var(--accent);
+  font-size: 0.8rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#text-area ul li:hover {
+  background: var(--primary);
+  color: #fff;
+  transform: translateX(8px);
+  box-shadow: 0 4px 15px rgba(26, 39, 68, 0.2);
+  border-color: var(--primary);
+}
+
+#text-area ul li:hover::before {
+  color: var(--accent);
+}
+
+/* ===== Day Tab Buttons ===== */
+.tab-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 30px 0 20px;
+  padding: 6px;
+  background: var(--card-bg);
+  border-radius: 50px;
+  box-shadow: var(--shadow);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tab-buttons button {
+  padding: 12px 28px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  background: transparent;
+  color: var(--text-light);
+  transition: all var(--transition);
+  letter-spacing: 0.3px;
+}
+
+.tab-buttons button:hover {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(26, 39, 68, 0.3);
+}
+
+.tab-buttons button:focus {
+  outline: none;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(26, 39, 68, 0.3);
+}
+
+/* ===== Timetable Tables ===== */
+#text-area table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  margin-bottom: 20px;
+}
+
+#text-area table thead {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+}
+
+#text-area table thead th {
+  color: #fff;
+  padding: 16px 20px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.92rem;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+#text-area table tbody tr {
+  transition: all var(--transition);
+  border-bottom: 1px solid var(--border);
+}
+
+#text-area table tbody tr:last-child {
+  border-bottom: none;
+}
+
+#text-area table tbody tr:nth-child(even) {
+  background: #f8f9fd;
+}
+
+#text-area table tbody tr:hover {
+  background: linear-gradient(90deg, rgba(212, 168, 67, 0.08), rgba(26, 39, 68, 0.05));
+  transform: scale(1.005);
+}
+
+#text-area table tbody td {
+  padding: 16px 20px;
+  font-size: 0.95rem;
+  color: var(--text);
+  vertical-align: middle;
+}
+
+#text-area table tbody td:first-child {
+  font-weight: 600;
+  color: var(--primary);
+  white-space: nowrap;
+}
+
+#text-area table tbody td:last-child {
+  font-family: 'Courier New', monospace;
+  font-weight: 700;
+  color: var(--primary-light);
+  background: rgba(26, 39, 68, 0.04);
+  border-radius: 4px;
+}
+
+/* Day section headings */
+#text-area div[id^="day-"] h3 {
+  text-align: center;
+  font-size: 1.25rem;
+  color: var(--accent);
+  border-left: none;
+  padding-left: 0;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-light);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* ===== Selection Highlight ===== */
+::selection {
+  background: var(--accent);
+  color: var(--primary);
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 900px) {
+  nav {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .nav-buttons {
+    margin-left: 0;
+    justify-content: center;
+  }
+
+  .welcome-container {
+    grid-template-columns: 1fr;
+    margin: 30px auto;
+  }
+
+  #text-area ul {
+    grid-template-columns: 1fr;
+  }
+
+  .tab-buttons {
+    border-radius: var(--radius);
+  }
+}
+
+@media (max-width: 600px) {
+  nav h1 {
+    font-size: 1.1rem;
+  }
+
+  nav h1:last-of-type {
+    font-size: 0.95rem;
+  }
+
+  .nav-button {
+    padding: 8px 16px;
+    font-size: 0.82rem;
+  }
+
+  .welcome,
+  .faculty-info {
+    padding: 25px;
+  }
+
+  .program-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .program-buttons button {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  .tab-buttons {
+    flex-direction: column;
+    border-radius: var(--radius);
+    align-items: stretch;
+  }
+
+  .tab-buttons button {
+    border-radius: 8px;
+  }
+
+  #text-area table {
+    font-size: 0.82rem;
+  }
+
+  #text-area table thead th,
+  #text-area table tbody td {
+    padding: 10px 8px;
+  }
+
+  #text-area table thead th {
+    font-size: 0.75rem;
+  }
+}
