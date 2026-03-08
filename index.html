@@ -4,52 +4,361 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ESP-SITE</title>
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="cssclaude.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
+
+    <!-- ============ NAVIGATION (ORIGINAL + NEW LINKS) ============ -->
     <nav>
         <div class="logo">
             <img src="kyambogo-logo.png" alt="Kyambogo University Logo" class="logo" width="100" height="100">
         </div>
         <h1>KYAMBOGO UNIVERSITY</h1>
-        <h1 align="center">Faculty of Science</h1>
+        <h1>Faculty of Science</h1>
         <div class="nav-buttons">
             <a href="index.html" class="nav-button">Home</a>
             <a href="about.html" class="nav-button">About Us</a>
             <a href="programs.html" class="nav-button">Programs</a>
             <a href="research.html" class="nav-button">Research</a>
             <a href="events.html" class="nav-button">Events</a>
-            </div>
+            <a href="#announcements-section" class="nav-button nav-new"><i class="fas fa-bullhorn"></i> Announcements</a>
+            <a href="#materials-section" class="nav-button nav-new"><i class="fas fa-book-open"></i> Materials</a>
+        </div>
     </nav>
+
+    <!-- ============ WELCOME SECTION (ORIGINAL) ============ -->
     <div class="welcome-container">
         <div class="welcome">
-            <h2>Welcome to the Faculty of Science Student site</h2>
-            <p>This is the best students' site for the Faculty of Science at Kyambogo university.
+            <h2>Welcome to the Faculty of Science Student Site</h2>
+            <p>This is the students' best site for the Faculty of Science at Kyambogo university.
                 Here you can find information about our programs, research, and events.
             </p>
         </div>
         <div class="faculty-info">
             <h3>About the Faculty of Science</h3>
-            <p>The Faculty of Science at Kyambogo University is dedicated to providing high-quality 
-                education and research opportunities in various scientific disciplines. 
-                Our faculty members are experts in their fields, and we offer a wide 
+            <p>The Faculty of Science at Kyambogo University is dedicated to providing high-quality
+                education and research opportunities in various scientific disciplines.
+                Our faculty members are experts in their fields, and we offer a wide
                 range of programs for undergraduate and postgraduate students.</p>
         </div>
     </div>
-    <h4>Please Select your program to continue:</h4>
-        <div class="program-buttons">
-            <button id="chem-math-btn">ESP (Chemistry & Mathematics)</button>
-            <button id="phy-math-btn">ESP (Physics & Mathematics)</button>
-            <button id="bio-chem-btn">ESB (Biology & Chemistry)</button>
-        </div>  
-    <div id="text-area">
 
+    <!-- ============ QUICK ACTIONS BAR (NEW) ============ -->
+    <div class="quick-actions">
+        <button class="action-btn" id="open-add-course"><i class="fas fa-plus-circle"></i> Add Your Course</button>
+        <button class="action-btn" id="open-share-material"><i class="fas fa-upload"></i> Share Materials</button>
+        <button class="action-btn" id="open-post-announcement"><i class="fas fa-bullhorn"></i> Post Announcement</button>
+        <button class="action-btn" id="toggle-chat-btn"><i class="fas fa-comments"></i> Group Live Chat</button>
     </div>
-    <script src="app.js"></script>
+
+    <!-- ============ PROGRAM SELECTION (ORIGINAL) ============ -->
+    <h4>Please Select your program to continue:</h4>
+    <div class="program-buttons">
+        <button id="chem-math-btn">ESP (Chemistry &amp; Mathematics)</button>
+        <button id="phy-math-btn">ESP (Physics &amp; Mathematics)</button>
+        <button id="bio-chem-btn">ESB (Biology &amp; Chemistry)</button>
+    </div>
+
+    <!-- ============ DYNAMIC CONTENT AREA (ORIGINAL) ============ -->
+    <div id="text-area"></div>
+
+    <!-- ============ ANNOUNCEMENTS SECTION (NEW) ============ -->
+    <section id="announcements-section" class="feature-section">
+        <div class="section-header">
+            <i class="fas fa-bullhorn"></i>
+            <h2>Announcements Board</h2>
+        </div>
+        <div class="section-description">
+            <p>Stay up to date with the latest news, deadlines, and important information from fellow students and faculty.</p>
+        </div>
+        <div id="announcements-list" class="announcements-list">
+            <!-- Default sample announcement -->
+            <div class="announcement-card pinned">
+                <div class="announcement-header">
+                    <div class="announcement-avatar"><i class="fas fa-user-shield"></i></div>
+                    <div class="announcement-meta">
+                        <span class="announcement-author">Admin</span>
+                        <span class="announcement-date">Welcome Post</span>
+                    </div>
+                    <span class="announcement-badge badge-pinned"><i class="fas fa-thumbtack"></i> Pinned</span>
+                </div>
+                <h3 class="announcement-title">Welcome to the Announcements Board!</h3>
+                <p class="announcement-body">Use this board to share important updates, exam reminders, class changes, and more. Click "Post Announcement" above to get started.</p>
+                <div class="announcement-footer">
+                    <button class="like-btn" onclick="likeAnnouncement(this)"><i class="far fa-heart"></i> <span>0</span></button>
+                    <button class="reply-btn" onclick="toggleReply(this)"><i class="far fa-comment"></i> Reply</button>
+                </div>
+                <div class="reply-section" style="display:none;">
+                    <div class="replies-container"></div>
+                    <div class="reply-input-row">
+                        <input type="text" placeholder="Write a reply..." class="reply-input">
+                        <button class="reply-send-btn" onclick="sendReply(this)"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SHARED MATERIALS SECTION (NEW) ============ -->
+    <section id="materials-section" class="feature-section">
+        <div class="section-header">
+            <i class="fas fa-book-open"></i>
+            <h2>Shared Course Materials</h2>
+        </div>
+        <div class="section-description">
+            <p>Browse and share study resources, notes, past papers, and helpful links with your classmates.</p>
+        </div>
+        <div class="materials-filter">
+            <button class="filter-btn active" onclick="filterMaterials('all', this)">All</button>
+            <button class="filter-btn" onclick="filterMaterials('notes', this)">Notes</button>
+            <button class="filter-btn" onclick="filterMaterials('past-paper', this)">Past Papers</button>
+            <button class="filter-btn" onclick="filterMaterials('link', this)">Links</button>
+            <button class="filter-btn" onclick="filterMaterials('other', this)">Other</button>
+        </div>
+        <div id="materials-list" class="materials-grid">
+            <!-- Sample material card -->
+            <div class="material-card" data-type="notes">
+                <div class="material-icon notes"><i class="fas fa-file-alt"></i></div>
+                <div class="material-info">
+                    <h4>Sample: Numerical Analysis Notes</h4>
+                    <p class="material-meta"><i class="fas fa-user"></i> Shared by Admin &bull; <i class="fas fa-tag"></i> Notes</p>
+                    <p class="material-desc">Sample resource card — share your own materials using the button above!</p>
+                </div>
+                <div class="material-actions">
+                    <button class="material-download" onclick="alert('This is a sample card.')"><i class="fas fa-download"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ ADD COURSE MODAL (NEW) ============ -->
+    <div class="modal-overlay" id="add-course-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2><i class="fas fa-plus-circle"></i> Add Your Course</h2>
+                <button class="modal-close" onclick="closeModal('add-course-modal')">&times;</button>
+            </div>
+            <form id="add-course-form" onsubmit="handleAddCourse(event)">
+                <div class="form-group">
+                    <label for="course-program">Select Program</label>
+                    <select id="course-program" required>
+                        <option value="">-- Choose Program --</option>
+                        <option value="chem-math">ESP (Chemistry & Mathematics)</option>
+                        <option value="phy-math">ESP (Physics & Mathematics)</option>
+                        <option value="bio-chem">ESB (Biology & Chemistry)</option>
+                        <option value="other">OTHER</option>option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="course-code">Course Code</label>
+                    <input type="text" id="course-code" placeholder="e.g. SMT 221" required>
+                </div>
+                <div class="form-group">
+                    <label for="course-name">Course Name</label>
+                    <input type="text" id="course-name" placeholder="e.g. Numerical Analysis I" required>
+                </div>
+                <div class="form-group">
+                    <label for="course-lecturer">Lecturer</label>
+                    <input type="text" id="course-lecturer" placeholder="e.g. Dr. Nuwagaba Savannah" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="course-day">Day</label>
+                        <select id="course-day" required>
+                            <option value="">-- Day --</option>
+                            <option value="monday">Monday</option>
+                            <option value="tuesday">Tuesday</option>
+                            <option value="wednesday">Wednesday</option>
+                            <option value="thursday">Thursday</option>
+                            <option value="friday">Friday</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="course-time">Time Slot</label>
+                        <select id="course-time" required>
+                            <option value="">-- Time --</option>
+                            <option value="08:00AM-10:00AM">08:00 AM – 10:00 AM</option>
+                            <option value="10:00AM-12:00PM">10:00 AM – 12:00 PM</option>
+                            <option value="12:00PM-02:00PM">12:00 PM – 02:00 PM</option>
+                            <option value="02:00PM-04:00PM">02:00 PM – 04:00 PM</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="form-submit"><i class="fas fa-check"></i> Add Course</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ============ SHARE MATERIAL MODAL (NEW) ============ -->
+    <div class="modal-overlay" id="share-material-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2><i class="fas fa-upload"></i> Share Course Material</h2>
+                <button class="modal-close" onclick="closeModal('share-material-modal')">&times;</button>
+            </div>
+            <form id="share-material-form" onsubmit="handleShareMaterial(event)">
+                <div class="form-group">
+                    <label for="material-title">Title</label>
+                    <input type="text" id="material-title" placeholder="e.g. Probability Theory Past Paper 2023" required>
+                </div>
+                <div class="form-group">
+                    <label for="material-type">Type</label>
+                    <select id="material-type" required>
+                        <option value="">-- Select Type --</option>
+                        <option value="notes">Notes</option>
+                        <option value="past-paper">Past Paper</option>
+                        <option value="link">Link / URL</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="material-author">Your Name</label>
+                    <input type="text" id="material-author" placeholder="e.g. John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="material-description">Description</label>
+                    <textarea id="material-description" rows="3" placeholder="Brief description of the material..." required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="material-link">Link (Google Drive, Dropbox, etc.)</label>
+                    <input type="url" id="material-link" placeholder="https://drive.google.com/...">
+                </div>
+                <div class="form-group">
+                    <label for="material-file">Or Upload File</label>
+                    <div class="file-upload-area" id="file-upload-area">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>Drag & drop file here or <span>browse</span></p>
+                        <input type="file" id="material-file" class="file-input">
+                        <span class="file-name" id="file-name-display"></span>
+                    </div>
+                </div>
+                <button type="submit" class="form-submit"><i class="fas fa-share"></i> Share Material</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ============ POST ANNOUNCEMENT MODAL (NEW) ============ -->
+    <div class="modal-overlay" id="post-announcement-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2><i class="fas fa-bullhorn"></i> Post Announcement</h2>
+                <button class="modal-close" onclick="closeModal('post-announcement-modal')">&times;</button>
+            </div>
+            <form id="post-announcement-form" onsubmit="handlePostAnnouncement(event)">
+                <div class="form-group">
+                    <label for="announce-author">Your Name</label>
+                    <input type="text" id="announce-author" placeholder="e.g. Jane Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="announce-category">Category</label>
+                    <select id="announce-category" required>
+                        <option value="">-- Select --</option>
+                        <option value="general">General</option>
+                        <option value="exam">Exam / Test</option>
+                        <option value="deadline">Deadline</option>
+                        <option value="event">Event</option>
+                        <option value="urgent">Urgent</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="announce-title">Title</label>
+                    <input type="text" id="announce-title" placeholder="e.g. Mid-Semester Exam Timetable Released" required>
+                </div>
+                <div class="form-group">
+                    <label for="announce-body">Message</label>
+                    <textarea id="announce-body" rows="5" placeholder="Write your announcement here..." required></textarea>
+                </div>
+                <button type="submit" class="form-submit"><i class="fas fa-paper-plane"></i> Post Announcement</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ============ GROUP LIVE CHAT WIDGET (NEW) ============ -->
+    <div class="chat-widget" id="chat-widget">
+        <div class="chat-header" id="chat-header">
+            <div class="chat-header-info">
+                <div class="chat-status-dot"></div>
+                <h3>Group Live Chat</h3>
+                <span class="online-count" id="online-count">1 online</span>
+            </div>
+            <div class="chat-header-actions">
+                <button class="chat-minimize" id="chat-minimize"><i class="fas fa-minus"></i></button>
+                <button class="chat-close-btn" id="chat-close-btn"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+        <div class="chat-body" id="chat-body">
+            <div class="chat-welcome-msg">
+                <i class="fas fa-comments"></i>
+                <p>Welcome to the group chat! Say hello to your classmates 👋</p>
+            </div>
+            <div id="chat-messages">
+                <!-- Messages rendered here -->
+            </div>
+        </div>
+        <div class="chat-typing" id="chat-typing" style="display:none;">
+            <span class="typing-dots"><span></span><span></span><span></span></span>
+            <span>Coordinator is typing...</span>
+        </div>
+        <div class="chat-footer">
+            <div class="chat-name-bar" id="chat-name-bar">
+                <input type="text" id="chat-username" placeholder="Enter your name to join..." class="chat-name-input">
+                <button id="chat-join-btn" class="chat-join-btn"><i class="fas fa-sign-in-alt"></i> Join</button>
+            </div>
+            <div class="chat-input-bar" id="chat-input-bar" style="display:none;">
+                <button class="chat-emoji-btn" id="chat-emoji-btn"><i class="far fa-smile"></i></button>
+                <input type="text" id="chat-input" placeholder="Type a message..." class="chat-input">
+                <button id="chat-send" class="chat-send-btn"><i class="fas fa-paper-plane"></i></button>
+            </div>
+            <div class="emoji-picker" id="emoji-picker" style="display:none;">
+                <span onclick="insertEmoji('😀')">😀</span><span onclick="insertEmoji('😂')">😂</span>
+                <span onclick="insertEmoji('😍')">😍</span><span onclick="insertEmoji('🤔')">🤔</span>
+                <span onclick="insertEmoji('👍')">👍</span><span onclick="insertEmoji('👏')">👏</span>
+                <span onclick="insertEmoji('🔥')">🔥</span><span onclick="insertEmoji('💯')">💯</span>
+                <span onclick="insertEmoji('📚')">📚</span><span onclick="insertEmoji('✅')">✅</span>
+                <span onclick="insertEmoji('❤️')">❤️</span><span onclick="insertEmoji('😎')">😎</span>
+                <span onclick="insertEmoji('🎓')">🎓</span><span onclick="insertEmoji('✍️')">✍️</span>
+                <span onclick="insertEmoji('👋')">👋</span><span onclick="insertEmoji('🙏')">🙏</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============ FLOATING CHAT TOGGLE BUBBLE (NEW) ============ -->
+    <button class="chat-fab" id="chat-fab" title="Open Group Chat">
+        <i class="fas fa-comments"></i>
+        <span class="chat-fab-badge" id="chat-fab-badge" style="display:none;">0</span>
+    </button>
+
+    <!-- ============ TOAST NOTIFICATION (NEW) ============ -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <!-- ============ FOOTER (NEW) ============ -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4><i class="fas fa-university"></i> Kyambogo University</h4>
+                <p>Faculty of Science — Student version site</p>
+                <p>Knowledge and Skills for Service.</p>
+            </div>
+            <div class="footer-col">
+                <h4><i class="fas fa-link"></i> Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="programs.html">Programs</a>
+                <a href="research.html">Research</a>
+            </div>
+            <div class="footer-col">
+                <h4><i class="fas fa-envelope"></i> Contact</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Kyambogo, Kampala, Uganda</p>
+                <p><i class="fas fa-phone"></i> +256 702 564 878</p>
+                <p><i class="fas fa-envelope"></i> kavumarodgersscientist@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Faculty of Science, Kyambogo University. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="jsclaude.js"></script>
 </body>
-
 </html>
-
-
-
-
